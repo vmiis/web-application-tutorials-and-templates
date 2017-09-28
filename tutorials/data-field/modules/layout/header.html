@@ -1,25 +1,31 @@
-<div header>
-	<div id=header__ID top-navigation class="w3-top">
-		<div id=small__ID class='w3-hide-large'><a onclick="$vm.nav_click_process('home')"><b>Business Portal</b></a></div>
-		<div id=large__ID class='w3-hide-small w3-hide-medium'><a onclick="$vm.nav_click_process('home')"><b>Business Portal</b></a></div>
-
-		<a id=small_btn__ID href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-
-		<div id=topbar__ID class="w3-right w3-hide-small w3-hide-medium">
-			<a onclick="$vm.nav_click_process('home')" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
-			<div class="w3-dropdown-hover">
-		      <button class="w3-button"><i class="fa fa-th"></i> Data Fields <i class="fa fa-caret-down"></i></button>
-		      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-		        <a onclick="$vm.nav_click_process('dropdown-list')" class="w3-bar-item w3-button">Dropdown List</a>
-		        <a onclick="$vm.nav_click_process('radio-button')" class="w3-bar-item w3-button">Radio Button</a>
-		        <a onclick="$vm.nav_click_process('checkbox')" class="w3-bar-item w3-button">Check Box</a>
-				<a onclick="$vm.nav_click_process('color')" class="w3-bar-item w3-button">Color</a>
-				<a onclick="$vm.nav_click_process('date')" class="w3-bar-item w3-button">Date</a>
-				<a onclick="$vm.nav_click_process('file')" class="w3-bar-item w3-button">File</a>
-				<a onclick="$vm.nav_click_process('image')" class="w3-bar-item w3-button">Image</a>
-		      </div>
-		    </div>
-			<a name=signinout onclick="$vm.nav_click_process('vm_signinout')" class="w3-bar-item w3-button"></a>
+<div header class=debug__ID>
+	<div id=header__ID top-navigation class=debug__ID>
+		<div id=large__ID class=debug__ID>
+			<div id=large_logo__ID class=debug__ID>
+				<a onclick="$vm.nav_click_process('home')"><b>Business Portal</b></a>
+			</div>
+			<div id=large_nav__ID>
+				<a onclick="$vm.nav_click_process('home')" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
+				<div class="w3-dropdown-hover">
+			      <button id=dropdown_btn_data_field__ID class="w3-button"><i class="fa fa-th"></i> Data Fields <i class="fa fa-caret-down"></i></button>
+			      <div id=dropdown_data_field__ID class="w3-dropdown-content w3-bar-block w3-card-4">
+			        <a onclick="$vm.nav_click_process('dropdown-list');w3_d_close();" class="w3-bar-item w3-button">Dropdown List</a>
+			        <a onclick="$vm.nav_click_process('radio-button');w3_d_close();" class="w3-bar-item w3-button">Radio Button</a>
+			        <a onclick="$vm.nav_click_process('checkbox');w3_d_close();" class="w3-bar-item w3-button">Check Box</a>
+					<a onclick="$vm.nav_click_process('color');w3_d_close();" class="w3-bar-item w3-button">Color</a>
+					<a onclick="$vm.nav_click_process('date');w3_d_close();" class="w3-bar-item w3-button">Date</a>
+					<a onclick="$vm.nav_click_process('file');w3_d_close();" class="w3-bar-item w3-button">File</a>
+					<a onclick="$vm.nav_click_process('image');w3_d_close();" class="w3-bar-item w3-button">Image</a>
+			      </div>
+			    </div>
+				<a name=signinout onclick="$vm.nav_click_process('vm_signinout')" class="w3-bar-item w3-button"></a>
+			</div>
+		</div>
+		<div id=small__ID class=debug__ID>
+			<div id=small_logo__ID class=debug__ID style='display:inline-block'>
+				<a onclick="$vm.nav_click_process('home')"><b>Business Portal</b></a>
+			</div>
+			<a id=small_btn__ID class="w3-bar-item w3-button w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 		</div>
 	</div>
 	<div id="sidebar__ID" side-navigation class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-large">
@@ -41,11 +47,6 @@
 	</div>
 	<script navigation-processing>
 		//------------------------------------
-		setTimeout(function (){
-			var header_height=$('#header__ID').outerHeight();
-			$('#sidebar__ID').css({'margin-top':header_height+'px'});
-		},1000);
-		//------------------------------------
 		var sidebar = document.getElementById("sidebar__ID");
 		function w3_open() {
 			if (sidebar.style.display === 'block') sidebar.style.display = 'none';
@@ -54,6 +55,12 @@
 		function w3_close() {
 			sidebar.style.display = "none";
 		}
+		function w3_d_close(){
+			$('#dropdown_data_field__ID').css('display','none');
+		}
+		$('#dropdown_btn_data_field__ID').mouseenter(function(){
+			$('#dropdown_data_field__ID').css('display','');
+		})
 		//-----------------------------------------
 		if($vm.user=='guest'){
 			$('a[name=signinout]').html('<i class="fa fa-user"></i> Sign In')
@@ -66,6 +73,9 @@
 		//---------------------------------------------
 	</script>
 	<style>
+		.debug__ID{
+			border: 0px solid red;
+		}
 		#header__ID{
 			background: rgba(128,128,128,0.5);
 		}
@@ -73,18 +83,27 @@
 		  	cursor:pointer;
 		}
 		#large__ID{
+		}
+		#large_logo__ID{
 			font: 180% Arial;
 			color:#fff;
 			display: inline-block;
-			margin: 20px 0 5px 10px;
-			padding:3px 0 0 20px;
+			padding:25px 0 20px 120px;
+		}
+		#large_nav__ID{
+			font-family: Helvetica,Arial,sans-serif;
+			color:#fff;
+			display: inline-block;
+			padding:15px 0 0 220px;
 		}
 		#small__ID{
+			overflow: auto;
+		}
+		#small_logo__ID{
 			font: 180% Arial;
 			color:#fff;
 			display: inline-block;
-			margin: 10px 0 5px 10px;
-			padding:3px 0 0 20px;
+			padding:15px 0 0 20px;
 		}
 		#large__ID a:hover,#small__ID a:hover{
 			color:#fff;
@@ -104,7 +123,16 @@
 			display:none;
 			width:auto;
 		}
+		#small__ID{
+			display:none;
+		}
 		@media screen and (max-width:768px){
+			#small__ID{
+				display:block;
+			}
+			#large__ID{
+				display:none;
+			}
 		}
 	</style>
 </div>

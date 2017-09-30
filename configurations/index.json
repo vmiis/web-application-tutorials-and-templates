@@ -1,7 +1,5 @@
 {
-	"library_path":"https://cbs.wappsystem.com/dev/github",
 	"parts_path":"https://vmiis.github.io/parts",
-	"image_path":"https://image.datalinkedin.com",
 	"api_path_development":"https://cbs.wappsystem.com/dev/",
 	"api_path_production":"https://cbs.wappsystem.com/dev/",
 	"modules":
@@ -19,6 +17,22 @@
 		"simple-static-content-module":	{"url":"/modules/static/simple-static-content-module.html"	},
 		"simple-dynamic-content-module":{"url":"/modules/dynamic/simple-dynamic-content-module.html","table_id":"20008490"},
 		"automatic-slide-show-w3":		{"url":"/modules/static/automatic-slide-show-w3.html"},
-		"carousel-slide-b3":			{"url":"/modules/static/carousel-slide-b3.html"}
+		"carousel-slide-b3":			{"url":"/modules/static/carousel-slide-b3.html"},
+        "contact-us":			        {"url":"/modules/static/contact-us.html"},
+        "what-is-business-portal":		{"url":"/modules/static/about/what-is-business-portal.html"},
+        "solutions":		            {"url":"/modules/static/about/solutions.html"},
+        "structure":		            {"url":"/modules/static/about/structure.html"},
+        "my-goals":		                {"url":"/modules/static/about/my-goals.html"},
+        "my-skills":		            {"url":"/modules/static/about/my-skills.html"},
+        "job-proposal":		            {"url":"/modules/static/about/job-proposal.html"},
+        "business-proposal":		    {"url":"/modules/static/about/business-proposal.html"},
+        "protential-success":		    {"url":"/modules/static/about/protential-success.html"},
+        "working-together":		        {"url":"/modules/static/about/working-together.html"},
+        "user-help":		            {"url":"/modules/dynamic/help/help.html","table_id":"20010425","form_module":"user_help_form","view":"user_help_view"},
+        "user_help_form":	            {"url":"/modules/dynamic/help/help.form.html","table_id":"20010425"},
+        "user_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010425"},
+        "dev-help":		                {"url":"/modules/dynamic/help/help.html","table_id":"20010426","form_module":"dev_help_form","view":"dev_help_view"},
+        "dev_help_form":	            {"url":"/modules/dynamic/help/help.form.html","table_id":"20010426"},
+        "dev_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010426"}
 	}
 }

@@ -1,0 +1,7 @@
+{
+	"group":"home_page",
+	"modules":
+	{
+		"who-am-i":	{"url":"/modules/static/home-page/who-am-i.html"}
+	}
+}

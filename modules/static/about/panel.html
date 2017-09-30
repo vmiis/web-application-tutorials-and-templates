@@ -1,8 +1,19 @@
 <div id=sys__ID>
 	<a id=back__ID onclick="$vm.back({div:'__ID'});" class="btn"><i class="fa fa-arrow-left"></i> Back</a>
 	<script>$('#sys__ID').css('top',$vm.header_height+'px')</script>
-	<style>#sys__ID{color:#000}#sys__ID a:hover{color:red;}</style>
+	<style>#sys__ID{position:fixed;color:#000}#sys__ID a:hover{color:red;}</style>
 </div>
+
+<div style='width:100%;overflow:auto'>
+	<div id=info__ID>
+		<i>
+			I like open-source software (OSS), single-page application (SPA),
+			software as a service (SaaS), responsive web design (RWD), modular
+			based and distributed web application.
+		</i>
+	</div>
+</div>
+
 
 <div id=panel__ID>
     <div class='nav__ID'>
@@ -17,6 +28,7 @@
         <ul>
             <li module=my-goals>My goals</li>
             <li module=my-skills>My skills</li>
+			<li module=my-hobbies>My hobbies</li>
         </ul>
         <br>
     </div>
@@ -74,6 +86,16 @@
 		overflow: auto;
 		animation: vm_module_fadein 1.0s;
 	}
+	#info__ID{
+		max-width:500px;
+        font-size: 9px;
+        padding:10px 10px 0 20px;
+        color:#222;
+        float:right;
+    }
+	#panel__ID{
+		padding-left:10px;
+	}
 	#panel__ID li {
 		color:#666;
 	}
@@ -94,5 +116,10 @@
 	}
 	#panel__ID a:active {
 		color:#666;
+	}
+	@media screen and (max-width:768px){
+		#sys__ID{
+			position:unset;
+		};
 	}
 </style>

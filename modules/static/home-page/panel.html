@@ -1,0 +1,95 @@
+<div id=sys__ID>
+	<a id=back__ID onclick="$vm.back({div:'__ID'});" class="btn"><i class="fa fa-arrow-left"></i> Back</a>
+	<script>$('#sys__ID').css('top',$vm.header_height+'px')</script>
+	<style>#sys__ID{color:#000}#sys__ID a:hover{color:red;}</style>
+</div>
+
+<div id=panel__ID>
+    <div class='nav__ID'>
+        <span>Home Page</span>
+        <ul>
+            <li module=who-am-i>Who am i</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+      function F__ID(){
+		  //--------------------------------------------------------
+		  var group='';
+		  //--------------------------------------------------------
+		  $('#panel__ID li').on('click',function(){
+			  var m=group+'_'+$(this).attr('module');
+			  $vm.nav_load_module(m);
+		  })
+		  //--------------------------------------------------------
+		  $vm.load_config_and_init=function(path){
+			  var url=$vm.hosting_path+path;
+			  var ver=localStorage.getItem(url+"_ver");
+			  var txt=localStorage.getItem(url+"_txt");
+			  //------------------------------------------
+			  if(ver!=$vm.version || txt===null || $vm.debug===true || $vm.reload!=''){
+				  console.log('loading '+url+'?_='+$vm.version+$vm.reload);
+				  $.get(url+'?_='+$vm.version+$vm.reload,function(data){
+					  localStorage.setItem(url+"_txt",data);
+					  localStorage.setItem(url+"_ver",$vm.version);
+					  $vm.panel_init(data);;
+				  },'text').fail(function() {
+					  alert( "The configuration file ("+url+") doesn't exist!" );
+				  });
+			  }
+			  else{ $vm.panel_init(txt); }
+			  //------------------------------------------
+		  }
+		  //--------------------------------------------------------
+		  $vm.panel_init=function(txt){
+			  var text=$('<div/>').html(txt).text();
+			  //---------------------------
+			  var config;
+			  try{ config=JSON.parse(text);}
+			  catch (e){ alert("Error in app config file\n"+e); return; }
+			  //--------------------------------------------------------
+			  group=config.group;
+			  var modules=config.modules;
+              for (var property in modules) {
+                  if($vm.module_list[property]==undefined) $vm.module_list[group+'_'+property]=modules[property];
+              }
+		  }
+		  //--------------------------------------------------------
+		  $vm.load_config_and_init("/configurations/home-page.json");
+		  //--------------------------------------------------------
+      }
+</script>
+<style>
+	VmInclude:__PARTS__/navigation/navigation.css
+	#D__ID{
+		background: url("__PARTS__/image/texture.png");
+		height:100%;
+		overflow: auto;
+		animation: vm_module_fadein 1.0s;
+	}
+	#panel__ID{
+		padding-left:10px;
+	}
+	#panel__ID li {
+		color:#666;
+	}
+	#panel__ID li:hover {
+		color:#fff;
+	}
+	#panel__ID a {
+		text-decoration: none;
+	}
+	#panel__ID a:link {
+		color:#666;
+	}
+	#panel__ID a:visited {
+		color:#666;
+	}
+	#panel__ID a:hover {
+		color:#fff;
+	}
+	#panel__ID a:active {
+		color:#666;
+	}
+</style>

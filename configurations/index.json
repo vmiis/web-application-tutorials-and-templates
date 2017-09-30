@@ -7,7 +7,7 @@
 	"modules":
 	{
 		"home":			{"url":"/modules/static/home.html"},
-		"about":		{"url":"https://vmiis.github.io/business-portal/modules/about/panel.html"},
+		"about":		{"url":"/modules/static/about/panel.html"},
 		"dropdown-list":{"url":"/modules/dynamic/dropdown-list.html","table_id":"20008497"},
 		"radio-button":	{"url":"/modules/dynamic/radio-button.html","table_id":"20008499"},
 		"checkbox":		{"url":"/modules/dynamic/checkbox.html","table_id":"20008498"},

@@ -37,6 +37,7 @@
         "dev_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010426"},
 		"home-page":	            	{"url":"/modules/static/home-page/panel.html"},
 		"home-page-who-am-i":	       	{"url":"/modules/static/home-page/who-am-i.html"},
-		"home-page-company":	       	{"url":"/modules/static/home-page/company.html"}
+		"home-page-company":	       	{"url":"/modules/static/home-page/company.html"},
+		"home-page-creative":	       	{"url":"/modules/static/home-page/creative.html"}
 	}
 }

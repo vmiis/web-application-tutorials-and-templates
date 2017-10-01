@@ -39,6 +39,8 @@
 		"home-page-company":	       	{"url":"/modules/static/home-page/company.html"},
 		"home-page-creative":	       	{"url":"/modules/static/home-page/creative.html"},
 		"contact-us":			        {"url":"/modules/static/contact-us/sydney.html"},
-		"contact-us-creative":			{"url":"/modules/static/contact-us/creative.html"}
+		"contact-us-creative":			{"url":"/modules/static/contact-us/creative.html"},
+		"sandbox":						{"url":"/modules/static/sandbox.html"},
+		"sandbox-content":				{"url":"/modules/static/sandbox.content.html"}
 	}
 }

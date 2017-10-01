@@ -18,7 +18,6 @@
 		"simple-dynamic-content-module":{"url":"/modules/dynamic/simple-dynamic-content-module.html","table_id":"20008490"},
 		"automatic-slide-show-w3":		{"url":"/modules/static/automatic-slide-show-w3.html"},
 		"carousel-slide-b3":			{"url":"/modules/static/carousel-slide-b3.html"},
-        "contact-us":			        {"url":"/modules/static/contact-us.html"},
         "what-is-business-portal":		{"url":"/modules/static/about/what-is-business-portal.html"},
         "solutions":		            {"url":"/modules/static/about/solutions.html"},
         "structure":		            {"url":"/modules/static/about/structure.html"},
@@ -38,6 +37,8 @@
 		"home-page":	            	{"url":"/modules/static/home-page/panel.html"},
 		"home-page-who-am-i":	       	{"url":"/modules/static/home-page/who-am-i.html"},
 		"home-page-company":	       	{"url":"/modules/static/home-page/company.html"},
-		"home-page-creative":	       	{"url":"/modules/static/home-page/creative.html"}
+		"home-page-creative":	       	{"url":"/modules/static/home-page/creative.html"},
+		"contact-us":			        {"url":"/modules/static/contact-us/sydney.html"},
+		"contact-us-creative":			{"url":"/modules/static/contact-us/creative.html"}
 	}
 }

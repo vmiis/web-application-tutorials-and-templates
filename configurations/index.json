@@ -41,6 +41,12 @@
 		"contact-us":			        {"url":"/modules/static/contact-us/sydney.html"},
 		"contact-us-creative":			{"url":"/modules/static/contact-us/creative.html"},
 		"sandbox":						{"url":"/modules/static/sandbox.html"},
-		"sandbox-content":				{"url":"/modules/static/sandbox.content.html"}
+		"sandbox-content":				{"url":"/modules/static/sandbox.content.html"},
+        "test":				            {"url":"/modules/static/test.html"},
+        "test2":				            {"url":"/modules/static/test2.html"},
+        "test3":				            {"url":"/modules/static/test3.html"},
+        "test4":				            {"url":"/modules/static/test4.html"},
+        "test5":				            {"url":"/modules/static/test5.html"},
+        "test6":				            {"url":"/modules/static/test6.html"}
 	}
 }

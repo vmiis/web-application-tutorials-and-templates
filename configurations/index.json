@@ -34,12 +34,10 @@
         "dev-help":		                {"url":"/modules/dynamic/help/help.html","table_id":"20010426","form_module":"dev_help_form","view":"dev_help_view"},
         "dev_help_form":	            {"url":"/modules/dynamic/help/help.form.html","table_id":"20010426"},
         "dev_help_view":	            {"url":"/modules/dynamic/help/help.view.html","table_id":"20010426"},
+
 		"home-page":	            	{"url":"/modules/static/home-page/panel.html"},
-		"home-page-who-am-i":	       	{"url":"/modules/static/home-page/who-am-i.html"},
-		"home-page-company":	       	{"url":"/modules/static/home-page/company.html"},
-		"home-page-creative":	       	{"url":"/modules/static/home-page/creative.html"},
-		"contact-us":			        {"url":"/modules/static/contact-us/sydney.html"},
-		"contact-us-creative":			{"url":"/modules/static/contact-us/creative.html"},
+		"contact-us":	            	{"url":"/modules/static/contact-us/panel.html"},
+
 		"sandbox":						{"url":"/modules/static/sandbox.html"},
 		"sandbox-content":				{"url":"/modules/static/sandbox.content.html"},
         "test":				            {"url":"/modules/static/test.html"},

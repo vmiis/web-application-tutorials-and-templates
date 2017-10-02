@@ -5,31 +5,25 @@
         </div>
     </div>
 	<div class='nav__ID'>
-	    <span>Static Modules (content from hard code)</span>
+	    <span>Static Modules (content from files)</span>
 	    <ul>
 			<li module=simple-static-content-module>Simple static content module</li>
 	        <li module=automatic-slide-show-w3>Automatic slide show (w3)</li>
 			<li module=carousel-slide-b3>Carousel-slide (bootstrap 3)</li>
 			<li module=price>Price</li>
-            <li module=contact-us>Contact us</li>
-			<li module=contact-us-creative>Contact us -- creative</li>
-			<li module=home-page-who-am-i>Home page -- who am i</li>
-			<li module=home-page-company>Home page -- company</li>
-			<li module=home-page-creative>Home page -- creative</li>
 			<li module=sandbox>Sandbox</li>
-            <li module=test>test</li>
-            <li module=test2>test2</li>
-            <li module=test3>test3</li>
-            <li module=test4>test4</li>
-            <li module=test5>test5</li>
-            <li module=test6>test6</li>
-
-
-			<!--<li module=home-page style='list-style-type:square;'>Home pages</li>-->
+            <li module=test2>Services</li>
+            <li module=test4>About</li>
+            <li module=test5>Team</li>
+            <li module=test6>Portfolio</li>
+		</ul>
+		<ul>
+			<li module=home-page style='list-style-type: circle;'>Home page</li>
+			<li module=contact-us style='list-style-type: circle;'>Contact us</li>
 	    </ul>
 	</div>
 	<div class='nav__ID'>
-	    <span>Dynamic Modules (content from database)</span>
+	    <span>Dynamic Modules (content to/from database)</span>
 	    <ul>
 			<li module=simple-dynamic-content-module>Simple dynamic content module</li>
 	        <li module=dropdown-list>Data field -- dropdown list</li>
@@ -105,6 +99,9 @@
     }
 	#D__ID li {
 		color:#666;
+	}
+	li::before{
+		font-size: 20px!Important;
 	}
 	#D__ID li:hover {
 		color:#fff;

@@ -1,7 +1,7 @@
 <div id=sys__ID>
 	<a id=back__ID onclick="$vm.back({div:'__ID'});" class="btn"><i class="fa fa-arrow-left"></i> Back</a>
 	<a id=s__ID onclick="$vm.source('__ID',{altKey:true});" class="btn"><i class="fa fa-file-text-o"></i> Source Code</a>
-	<span class='btn' style='cursor:default'><b>Home Pages</b></span>
+	<span class='btn' style='cursor:default'><b>Contact us</b></span>
 	<script>$('#sys__ID').css('top',$vm.header_height+'px')</script>
 	<style>#sys__ID{color:#000}#sys__ID a:hover{color:red;}</style>
 </div>
@@ -9,8 +9,7 @@
 <div id=panel__ID>
     <div class='nav__ID'>
         <ul>
-            <li module=who-am-i>Who am i</li>
-			<li module=company>Company</li>
+            <li module=sydney>Sydney</li>
 			<li module=creative>Creative</li>
 			<li module=studio>Studio</li>
         </ul>
@@ -21,7 +20,7 @@
       function F__ID(){
 		  //--------------------------------------------------------
 		  var group="";
-		  $vm.load_config_and_init("/configurations/home-page.json",function(config){
+		  $vm.load_config_and_init("/configurations/contact-us.json",function(config){
 			  group=config.group; if(group!="") group=group+"_";
 		  });
 		  //--------------------------------------------------------

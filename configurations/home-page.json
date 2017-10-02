@@ -2,6 +2,9 @@
 	"group":"home_page",
 	"modules":
 	{
-		"who-am-i":	{"url":"/modules/static/home-page/who-am-i.html"}
+		"who-am-i":			{"url":"/modules/static/home-page/who-am-i.html"},
+		"company":	       	{"url":"/modules/static/home-page/company.html"},
+		"creative":	       	{"url":"/modules/static/home-page/creative.html"},
+		"studio":	       	{"url":"/modules/static/home-page/studio.html"}
 	}
 }

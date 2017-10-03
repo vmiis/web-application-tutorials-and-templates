@@ -5,6 +5,7 @@
 		"sydney":			{"url":"/modules/static/contact-us/sydney.html"},
 		"company":	       	{"url":"/modules/static/contact-us/company.html"},
 		"creative":	       	{"url":"/modules/static/contact-us/creative.html"},
-		"studio":	       	{"url":"/modules/static/contact-us/studio.html"}
+		"studio":	       	{"url":"/modules/static/contact-us/studio.html"},
+		"lumino":	       	{"url":"/modules/static/contact-us/lumino.html"}
 	}
 }

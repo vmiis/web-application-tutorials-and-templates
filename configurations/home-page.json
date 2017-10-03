@@ -5,6 +5,7 @@
 		"who-am-i":			{"url":"/modules/static/home-page/who-am-i.html"},
 		"company":	       	{"url":"/modules/static/home-page/company.html"},
 		"creative":	       	{"url":"/modules/static/home-page/creative.html"},
-		"studio":	       	{"url":"/modules/static/home-page/studio.html"}
+		"studio":	       	{"url":"/modules/static/home-page/studio.html"},
+		"lumino":	       	{"url":"/modules/static/home-page/lumino.html"}
 	}
 }

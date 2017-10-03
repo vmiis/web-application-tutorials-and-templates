@@ -4,13 +4,13 @@
 	<script>$('#sys__ID').css('top',$vm.header_height+'px')</script>
 	<style>#sys__ID{position:fixed;color:#000}#sys__ID a:hover{color:red;}</style>
 </div>
-<iframe id=sandbox__ID sandbox="allow-scripts allow-same-origin" frameborder="0"></iframe>
+<iframe id=sandbox__ID _sandbox="allow-scripts" frameborder="0"></iframe>
 <script>
 	function F__ID(){
 		//--------------------------------------------------------
-        var third='/third-party/free-css/studio';
-		var url_frame  =third+"/frame.html";
-        var url_content=third+"/services.html"
+        var third='/third-party/free-css/lumino';
+		var url_frame  =third+"/frame.html?id=__ID";
+        var url_content=third+"/contact-us.html"
         //--------------------------------------------------------
         $('#sandbox__ID').attr('src',$vm.hosting_path+url_frame);
 		//--------------------------------------------------------
@@ -21,6 +21,12 @@
     		})
         });
         //--------------------------------------------------------
+		window.addEventListener('message', function(e) {
+			if(e.data.sandbox_id=='sandbox__ID'){
+				$vm.nav_load_module('simple-static-content-module');
+			}
+		}, false)
+		//--------------------------------------------------------
 	}
 </script>
 <style>

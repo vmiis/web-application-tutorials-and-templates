@@ -45,6 +45,8 @@
         "test3":				            {"url":"/modules/static/test3.html"},
         "test4":				            {"url":"/modules/static/test4.html"},
         "test5":				            {"url":"/modules/static/test5.html"},
-        "test6":				            {"url":"/modules/static/test6.html"}
+        "test6":				            {"url":"/modules/static/test6.html"},
+		"news":				            {"url":"/modules/static/news.html"},
+		"gallery":				            {"url":"/modules/static/gallery.html"}
 	}
 }

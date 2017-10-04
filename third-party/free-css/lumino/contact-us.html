@@ -27,21 +27,32 @@
 				<h3 class="light-blue-text tm-subtitle">Etiam at rhoncus nisl</h3>
 				<p>Nunc rutrum ac ante euismod cursus. Suspendisse imperdiet feugiat massa nec iaculis</p>
 				<p>
-					Tel: <a href="tel:0100200340">010-020-0340</a><br>
-					Email: <a href="mailto:info@company.com">info@company.com</a>
+					Tel: <a>010-020-0340</a><br>
+					Email: <a>info@company.com</a>
 				</p>
 			</div>
 		</div>
 	</section>
 </div>
 <script>
-	$('#myform').submit(function(event){
-	    event.preventDefault();
-		id=window.location.href.split('id=').pop()
-		window.parent.postMessage({sandbox_id:'sandbox'+id},"*")
-	});
 	$('a').on('click',function(){
 		id=window.location.href.split('id=').pop()
-		window.parent.postMessage({sandbox_id:'sandbox'+id},"*")
+		window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:1},"*")
 	})
+    $('#myform').submit(function(event){
+	    event.preventDefault();
+		id=window.location.href.split('id=').pop()
+        var contact={
+            Name:$('#contact_name').val(),
+            Email:$('#contact_email').val(),
+            Subject:$('#contact_subject').val(),
+            Message:$('#contact_message').val(),
+        }
+		window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:2,contact:contact},"*")
+	});
+    $('#page').on('res',function(event,res){
+        if(res.ret!=-1){
+             document.getElementById('myform').reset();
+        }
+    })
 </script>

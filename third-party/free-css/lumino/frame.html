@@ -10,4 +10,8 @@
 
 <div id=page></div>
 <style>#page{height:100%;overflow:auto;}</style>
-<script>window.onmessage=function(e){$('#page').html(e.data.content)};</script>
+<script>window.onmessage=function(e){
+    if(e.data.content!=undefined) $('#page').html(e.data.content);
+    if(e.data.res!=undefined) $('#page').triggerHandler('res',e.data.res);
+};
+</script>

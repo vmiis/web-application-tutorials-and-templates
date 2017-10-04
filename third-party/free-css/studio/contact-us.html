@@ -9,7 +9,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <form action="#" method="post" name="sentMessage" id="contactForm" novalidate>
+        <form name="sentMessage" id=myform>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -42,3 +42,25 @@
     </div>
   </div>
 </section>
+<script>
+	$('a').on('click',function(){
+		id=window.location.href.split('id=').pop()
+		window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:1},"*")
+	})
+    $('#myform').submit(function(event){
+	    event.preventDefault();
+		id=window.location.href.split('id=').pop()
+        var contact={
+            Name:$('#name').val(),
+            Email:$('#email').val(),
+            Phone:$('#phone').val(),
+            Message:$('#message').val()
+        }
+		window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:2,contact:contact},"*")
+	});
+    $('#page').on('res',function(event,res){
+        if(res.ret!=-1){
+             document.getElementById('myform').reset();
+        }
+    })
+</script>

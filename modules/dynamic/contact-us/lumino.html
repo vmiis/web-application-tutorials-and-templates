@@ -4,7 +4,7 @@
 	<script>$('#sys__ID').css('top',$vm.header_height+'px')</script>
 	<style>#sys__ID{position:fixed;color:#000}#sys__ID a:hover{color:red;}</style>
 </div>
-<iframe id=sandbox__ID _sandbox="allow-scripts" frameborder="0"></iframe>
+<iframe id=sandbox__ID sandbox="allow-scripts allow-forms" frameborder="0"></iframe>
 <script>
 	function F__ID(){
 		//--------------------------------------------------------
@@ -14,16 +14,27 @@
         //--------------------------------------------------------
         $('#sandbox__ID').attr('src',$vm.hosting_path+url_frame);
 		//--------------------------------------------------------
+        var iframeWin = document.getElementById("sandbox__ID").contentWindow;
         $('#sandbox__ID').load(function(){
     		$vm.load_module_content($vm.hosting_path+url_content,function(sandbox_content){
-                var iframeWin = document.getElementById("sandbox__ID").contentWindow;
                 iframeWin.postMessage({content:sandbox_content},'*');
     		})
         });
         //--------------------------------------------------------
 		window.addEventListener('message', function(e) {
 			if(e.data.sandbox_id=='sandbox__ID'){
-				$vm.nav_load_module('simple-static-content-module');
+                if(e.data.cmd==1){
+				    $vm.nav_load_module('simple-static-content-module');
+                }
+                else if(e.data.cmd==2){
+                    //-------------------------------------
+                    var req={cmd:"add_record_anonymous",db_pid:'20011189',data:e.data.contact,dbv:{}};
+                    $VmAPI.request({data:req,callback:function(res){
+                        $vm.alert('Thank you for your message!');
+                        iframeWin.postMessage({res:res},'*');
+                    }});
+                    //-------------------------------------
+                }
 			}
 		}, false)
 		//--------------------------------------------------------

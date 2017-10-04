@@ -21,7 +21,7 @@
 		</ul>
 		<ul>
 			<li module=home-page style='list-style-type: circle;'>Home page</li>
-			<li module=contact-us style='list-style-type: circle;'>Contact us</li>
+            <li module=static-contact-us style='list-style-type: circle;'>Contact us</li>
 	    </ul>
 	</div>
 	<div class='nav__ID'>
@@ -35,6 +35,10 @@
 			<li module=date>Data field -- date</li>
 			<li module=file>Data field -- file</li>
 			<li module=image>Data field -- image</li>
+            <li module=contact-us-record>Contact us records</li>
+	    </ul>
+        <ul>
+			<li module=dynamic-contact-us style='list-style-type: circle;'>Contact us</li>
 	    </ul>
 	</div>
 	<div class='nav__ID'>
@@ -81,7 +85,7 @@
       function F__ID(){
 		  $('#page__ID li').on('click',function(){
 			  var m=$(this).attr('module');
-			  $vm.nav_load_module(m);
+              if(m!=undefined) $vm.nav_load_module(m);
 		  })
       }
 </script>

@@ -1,0 +1,43 @@
+<div id=sys__ID>
+	<a id=back__ID onclick="$vm.back({div:'__ID'});" class="btn"><i class="fa fa-arrow-left"></i> Back</a>
+	<a id=s__ID onclick="$vm.source('__ID',{altKey:true});" class="btn"><i class="fa fa-file-text-o"></i> Source Code</a>
+	<script>$('#sys__ID').css('top',$vm.header_height+'px')</script>
+	<style>#sys__ID{position:fixed;color:#000}#sys__ID a:hover{color:red;}</style>
+</div>
+<iframe id=sandbox__ID sandbox="allow-scripts" frameborder="0"></iframe>
+<script>
+	function F__ID(){
+		//--------------------------------------------------------
+        var third='/third-party/free-css/lumino';
+		var url_frame  =third+"/frame.html?id=__ID";
+        var url_content=third+"/one-column.html"
+        //--------------------------------------------------------
+        $('#sandbox__ID').attr('src',$vm.hosting_path+url_frame);
+		//--------------------------------------------------------
+        $('#sandbox__ID').load(function(){
+    		$vm.load_module_content($vm.hosting_path+url_content,function(sandbox_content){
+				var iframeWin = document.getElementById("sandbox__ID").contentWindow;
+                iframeWin.postMessage({content:sandbox_content},'*');
+    		})
+        });
+        //--------------------------------------------------------
+		window.addEventListener('message', function(e) {
+			if(e.data.sandbox_id=='sandbox__ID'){
+                if(e.data.cmd==1){
+				    $vm.nav_load_module('simple-static-content-module');
+                }
+			}
+		}, false)
+		//--------------------------------------------------------
+	}
+</script>
+<style>
+	#D__ID{
+		height:100%;
+		animation: vm_module_fadein 1.0s;
+	}
+	#sandbox__ID{
+		height:100%;
+		width:100%;
+	}
+</style>

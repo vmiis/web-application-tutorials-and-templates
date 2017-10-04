@@ -43,12 +43,15 @@
 		"sandbox":						{"url":"/modules/static/sandbox.html"},
 		"sandbox-content":				{"url":"/modules/static/sandbox.content.html"},
         "test":				            {"url":"/modules/static/test.html"},
-        "test2":				            {"url":"/modules/static/test2.html"},
-        "test3":				            {"url":"/modules/static/test3.html"},
-        "test4":				            {"url":"/modules/static/test4.html"},
-        "test5":				            {"url":"/modules/static/test5.html"},
-        "test6":				            {"url":"/modules/static/test6.html"},
+        "test2":				        {"url":"/modules/static/test2.html"},
+        "test3":				        {"url":"/modules/static/test3.html"},
+        "test4":				        {"url":"/modules/static/test4.html"},
+        "test5":				        {"url":"/modules/static/test5.html"},
+        "test6":				        {"url":"/modules/static/test6.html"},
 		"news":				            {"url":"/modules/static/news.html"},
-		"gallery":				            {"url":"/modules/static/gallery.html"}
+		"gallery":				        {"url":"/modules/static/gallery.html"},
+		"one-column":				    {"url":"/modules/static/one-column.html"},
+		"two-column":				    {"url":"/modules/static/two-column.html"},
+		"three-column":				    {"url":"/modules/static/three-column.html"}
 	}
 }

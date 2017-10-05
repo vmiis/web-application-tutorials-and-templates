@@ -1,0 +1,66 @@
+<div id=sys__ID>
+	<a id=back__ID onclick="$vm.back({div:'__ID'});" class="btn"><i class="fa fa-arrow-left"></i> Back</a>
+	<a id=s__ID onclick="$vm.source('__ID',{altKey:true});" class="btn"><i class="fa fa-file-text-o"></i> Source Code</a>
+	<span class='btn' style='cursor:default'><b>Wind Farm</b></span>
+	<script>$('#sys__ID').css('top',$vm.header_height+'px')</script>
+	<style>#sys__ID{color:#000} #sys__ID a:hover{color:red;}</style>
+</div>
+
+<div id=panel__ID>
+    <div class='nav__ID'>
+        <ul>
+			<li module=home>Home</li>
+			<li module=purpose-of-research>Purpose of research</li>
+			<li module=about-woolcock-research>About woolcock research</li>
+            <li module=researcher>Researchers</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+      function F__ID(){
+		  //--------------------------------------------------------
+		  var group="";
+		  $vm.load_config_and_init("/configurations/wind-farm.json",function(config){
+			  group=config.group; if(group!="") group=group+"_";
+		  });
+		  //--------------------------------------------------------
+		  $('#panel__ID li').on('click',function(){
+			  $vm.nav_load_module(group+$(this).attr('module'));
+		  })
+		  //--------------------------------------------------------
+      }
+</script>
+<style>
+	VmInclude:__PARTS__/navigation/navigation.css
+	#D__ID{
+		background: url("__PARTS__/image/texture.png");
+		height:100%;
+		overflow: auto;
+		animation: vm_module_fadein 1.0s;
+	}
+	#panel__ID{
+		padding-left:10px;
+	}
+	#panel__ID li {
+		color:#666;
+	}
+	#panel__ID li:hover {
+		color:#fff;
+	}
+	#panel__ID a {
+		text-decoration: none;
+	}
+	#panel__ID a:link {
+		color:#666;
+	}
+	#panel__ID a:visited {
+		color:#666;
+	}
+	#panel__ID a:hover {
+		color:#fff;
+	}
+	#panel__ID a:active {
+		color:#666;
+	}
+</style>

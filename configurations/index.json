@@ -38,6 +38,7 @@
 
 		"home-page":	            	{"url":"/modules/static/home-page/panel.html"},
         "static-contact-us":	        {"url":"/modules/static/contact-us/panel.html"},
+		"static-wind-farm":	        	{"url":"/modules/static/wind-farm/panel.html"},
 		"dynamic-contact-us":	        {"url":"/modules/dynamic/contact-us/panel.html"},
 
 		"sandbox":						{"url":"/modules/static/sandbox.html"},

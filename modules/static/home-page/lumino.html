@@ -1,6 +1,6 @@
 <div id=sys__ID>
 	<a id=back__ID onclick="$vm.back({div:'__ID'});" class="btn"><i class="fa fa-arrow-left"></i> Back</a>
-	<a id=s__ID onclick="$vm.source('__ID',{altKey:true});" class="btn"><i class="fa fa-file-text-o"></i> Source Code</a>
+	<a id=s__ID class="btn"><i class="fa fa-file-text-o"></i> Source Code</a>
 	<script>$('#sys__ID').css('top',$vm.header_height+'px')</script>
 	<style>#sys__ID{position:fixed;color:#fff}#sys__ID a:hover{color:red;}</style>
 </div>
@@ -8,19 +8,21 @@
 <script>
 	function F__ID(){
 		//--------------------------------------------------------
-        var third='/third-party/free-css/lumino';
+        var third=$vm.hosting_path+'/third-party/free-css/lumino';
 		var url_frame  =third+"/frame.html";
         var url_content=third+"/home-page.html"
         //--------------------------------------------------------
-        $('#sandbox__ID').attr('src',$vm.hosting_path+url_frame);
+        $('#sandbox__ID').attr('src',url_frame);
 		//--------------------------------------------------------
         $('#sandbox__ID').load(function(){
-    		$vm.load_module_content($vm.hosting_path+url_content,function(sandbox_content){
+    		$vm.load_module_content(url_content,function(sandbox_content){
                 var iframeWin = document.getElementById("sandbox__ID").contentWindow;
                 iframeWin.postMessage({content:sandbox_content},'*');
     		})
         });
         //--------------------------------------------------------
+		$('#s__ID').on('click',function(){$vm.url_source(url_content);})
+		//--------------------------------------------------------
 	}
 </script>
 <style>

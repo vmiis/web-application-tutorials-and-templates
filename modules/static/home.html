@@ -89,7 +89,11 @@
       function F__ID(){
 		  $('#page__ID li').on('click',function(){
 			  var m=$(this).attr('module');
-              if(m!=undefined) $vm.nav_load_module(m);
+              if(m!=undefined){
+				  $vm.hash++;
+				  location.hash=$vm.hash;
+				  $vm.nav_load_module(m);
+			  }
 		  })
       }
 </script>

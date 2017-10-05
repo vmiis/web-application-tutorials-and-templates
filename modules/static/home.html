@@ -90,8 +90,11 @@
 		  $('#page__ID li').on('click',function(){
 			  var m=$(this).attr('module');
               if(m!=undefined){
-				  $vm.hash++;
-				  location.hash=$vm.hash;
+	              /*
+				  $vm.hash_index++;
+				  $vm.last_hash="#"+$vm.hash_index;
+				  location.hash=$vm.hash_index;
+				  */
 				  $vm.nav_load_module(m);
 			  }
 		  })

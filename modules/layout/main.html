@@ -33,20 +33,24 @@ VmInclude:/modules/layout/footer.html
 		*/
 		//------------------------------------
 		/*
-		$vm.hash=0;
+		$vm.hash_index=0;
+		location.hash=$vm.hash_index;
+		$vm.last_hash='#0';
 		window.onhashchange=function(){
-		    if(location.hash.length>0){
-				alert($vm.hash)
+		    if(location.hash.length>=0){
 		        var new_hash=parseInt(location.hash.replace('#',''),10);
-				alert(new_hash)
-
+		        var last_hash=parseInt($vm.last_hash.replace('#',''),10);
+				if(last_hash>new_hash){
+					$vm.backward();				
+				}
+				if(last_hash<new_hash){
+					$vm.forward();				
+				}
 		    }
-			else{
-		        $vm.hash=0;
-		    }
+		    $vm.last_hash=location.hash;
 		}
-		*/
 		//------------------------------------
+		*/
 	}
 </script>
 <style main-layout-css>

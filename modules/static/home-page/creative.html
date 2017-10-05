@@ -4,7 +4,7 @@
 	<script>$('#sys__ID').css('top',$vm.header_height+'px')</script>
 	<style>#sys__ID{position:fixed;color:#fff}#sys__ID a:hover{color:red;}</style>
 </div>
-<div id=bk__ID></div>
+<!--<div id=bk__ID></div>-->
 <div id=page__ID>
 	<div class="container-fluid" style='max-width:800px'>
 		<div class="text-center">
@@ -20,9 +20,11 @@
 </div>
 <script>
 	function F__ID(){
+		/*
 		var bk_color='';
 		$('#D__ID').on('show',function(){	bk_color=$('#header_0').css('background-color'); $('#header_0').css('background-color','rgba(0,0,0,0');	})
 		$('#D__ID').on('hide',function(){	$('#header_0').css('background-color',bk_color); })
+		*/
 	}
 </script>
 <style>
@@ -33,17 +35,19 @@
 		animation: vm_module_fadein 1.0s;
 	}
 	#bk__ID{
+		/*
 		position: fixed;
 		z-index:-99;
 		top:0px;
 		right:0px;
 		bottom:0px;
 		left:0px;
-		background-size: cover;
-		background: url("images/creative.jpg") no-repeat bottom center;
+		*/
 	}
 	#page__ID{
-		border-top: 1px solid #aaa;
+		background-size: cover;
+		background-image: url("images/creative.jpg");
+		/*border-top: 1px solid #aaa;*/
 		height:100%;
 		display: flex;
 		align-items: center;

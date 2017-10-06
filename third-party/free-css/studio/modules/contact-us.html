@@ -58,7 +58,7 @@
         }
 		window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:2,contact:contact},"*")
 	});
-    $('#page').on('res',function(event,res){
+    $('#vm_top_container').on('res',function(event,res){
         if(res.ret!=-1){
              document.getElementById('myform').reset();
         }

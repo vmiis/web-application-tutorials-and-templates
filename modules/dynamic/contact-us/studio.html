@@ -9,9 +9,9 @@
         var src='/third-party/free-css/studio/frame.html';
         $('#sandbox__ID').attr('src',url_frame);
 		//--------------------------------------------------------
-        var iframeWin = document.getElementById("sandbox__ID").contentWindow;
         $('#sandbox__ID').load(function(){
     		$vm.load_module_content(url_content,function(sandbox_content){
+				var iframeWin = document.getElementById("sandbox__ID").contentWindow;
                 iframeWin.postMessage({content:sandbox_content},'*');
     		})
         });
@@ -26,6 +26,7 @@
                     var req={cmd:"add_record_anonymous",db_pid:'20011189',data:e.data.contact,dbv:{}};
                     $VmAPI.request({data:req,callback:function(res){
                         $vm.alert('Thank you for your message!');
+						var iframeWin = document.getElementById("sandbox__ID").contentWindow;
                         iframeWin.postMessage({res:res},'*');
                     }});
                     //-------------------------------------

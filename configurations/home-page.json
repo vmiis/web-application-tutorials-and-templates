@@ -6,6 +6,7 @@
 		"company":	       	{"url":"/modules/static/home-page/company.html"},
 		"creative":	       	{"url":"/modules/static/home-page/creative.html"},
 		"studio":	       	{"url":"/modules/static/home-page/studio.html"},
-		"lumino":	       	{"url":"/modules/static/home-page/lumino.html"}
+		"lumino":	       	{"url":"/modules/static/home-page/lumino.html"},
+		"lexis":	       	{"url":"/modules/static/home-page/lexis.html"}
 	}
 }

@@ -3,7 +3,7 @@
 	function F__ID(){
 		//--------------------------------------------------------
         var third=$vm.hosting_path+'/third-party/free-css/lumino';
-		var url_frame  =third+"/frame.html";
+		var url_frame  =third+"/frame.html?v="+$vm.version+"&id=__ID";
         var url_content=third+"/modules/gallery.html"
         //--------------------------------------------------------
         $('#sandbox__ID').attr('src',url_frame);
@@ -15,7 +15,16 @@
     		})
         });
         //--------------------------------------------------------
-		$('#s__ID').on('click',function(){$vm.url_source(url_content);})
+		window.addEventListener('message', function(e) {
+			if(e.data.sandbox_id=='sandbox__ID'){
+                if(e.data.cmd==1){
+				    $vm.nav_load_module('simple-static-content-module');
+                }
+                else if(e.data.cmd==3){
+					$vm.url_source(url_content);
+                }
+			}
+		}, false)
 		//--------------------------------------------------------
 	}
 </script>

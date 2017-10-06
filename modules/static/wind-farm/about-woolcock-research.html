@@ -6,7 +6,7 @@
 		if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost'){
 			third='http://127.0.0.1:8000/woolcock-imr/wind-farm-website-modules-by-garry'
 		}
-		var url_frame  =third+"/frame.html?v="+$vm.version;
+		var url_frame  =third+"/frame.html?v="+$vm.version+"&id=__ID";
         var url_content=third+"/modules/static/about-woolcock-research.html"
         //--------------------------------------------------------
         $('#sandbox__ID').attr('src',url_frame);
@@ -18,7 +18,16 @@
     		})
         });
         //--------------------------------------------------------
-		$('#s__ID').on('click',function(){$vm.url_source(url_content);})
+		window.addEventListener('message', function(e) {
+			if(e.data.sandbox_id=='sandbox__ID'){
+                if(e.data.cmd==1){
+				    $vm.nav_load_module('simple-static-content-module');
+                }
+                else if(e.data.cmd==3){
+					$vm.url_source(url_content);
+                }
+			}
+		}, false)
 		//--------------------------------------------------------
 	}
 </script>

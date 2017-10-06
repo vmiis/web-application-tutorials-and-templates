@@ -15,10 +15,18 @@
 
 		<style>html,body{height:100%;} #vm_top_container{height:100%;overflow:auto;}</style>
 		<script>
-			window.onmessage=function(e){
-			    if(e.data.content!=undefined) $('#vm_top_container').html(e.data.content);
-			    if(e.data.res!=undefined) $('#vm_top_container').triggerHandler('res',e.data.res);
-			};
+			$(document).ready(function(){
+				window.onmessage=function(e){
+				    if(e.data.content!=undefined) $('body').html(e.data.content);
+				    if(e.data.res!=undefined) $('body').triggerHandler('res',e.data.res);
+				};
+				$('body').on('dblclick',function(){
+					if(event.altKey){
+						id=window.location.href.split('id=').pop()
+						window.parent.postMessage({sandbox_id:'sandbox'+id,id:id,cmd:3},"*")
+					}
+				})
+			})
 		</script>
 	</head>
 	<body>

@@ -60,6 +60,12 @@
 		"gallery":				        {"url":"/modules/static/basic/gallery.html"},
 		"one-column":				    {"url":"/modules/static/basic/one-column.html"},
 		"two-column":				    {"url":"/modules/static/basic/two-column.html"},
-		"three-column":				    {"url":"/modules/static/basic/three-column.html"}
+		"three-column":				    {"url":"/modules/static/basic/three-column.html"},
+		
+		"service-lexis":				{"url":"/modules/static/group-001/service-lexis.html"},
+		"work-lexis":					{"url":"/modules/static/group-001/work-lexis.html"},
+		"team-lexis":					{"url":"/modules/static/group-001/team-lexis.html"},
+		"particles-VincentGarreau":				{"url":"/modules/static/group-001/particles-VincentGarreau.html"}
+		
 	}
 }

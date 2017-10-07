@@ -1,0 +1,8 @@
+{
+	"group":"dynamic-group_001",
+	"modules":
+	{
+		"dynamic-contact-us-lumino":			{"url":"/modules/dynamic/group-001/contact-us-lumino.html"},
+        "dynamic-contact-us-studio":	       	{"url":"/modules/dynamic/group-001/contact-us-studio.html"}
+	}
+}

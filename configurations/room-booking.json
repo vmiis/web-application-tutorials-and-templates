@@ -1,0 +1,26 @@
+{
+	"group":"room-booking",
+	"modules":
+	{
+		"monthly":{
+			"table_id":"20003813",
+			"url":"/modules/dynamic/room-booking/monthly.html"
+		},
+		"weekly":{
+			"table_id":"20003813",
+			"url":"/modules/dynamic/room-booking/weekly.html"
+		},
+		"daily":{
+			"table_id":"20003813",
+			"url":"/modules/dynamic/room-booking/daily.html"
+		},
+		"booking_record":{
+			"table_id":"20003813",
+			"url":"/modules/dynamic/room-booking/booking_record.html"
+		},
+		"room":{
+			"table_id":"20003812",
+			"url":"/modules/dynamic/room-booking/room.html"
+		}
+	}
+}

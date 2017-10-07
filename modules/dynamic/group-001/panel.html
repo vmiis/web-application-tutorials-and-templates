@@ -1,8 +1,9 @@
 <div id=panel__ID>
     <div class='nav__ID'>
+	    <span>Contact us</span>
         <ul>
-			<li module=studio>Studio</li>
-			<li module=lumino>Lumino</li>
+			<li module=dynamic-contact-us-studio>Studio</li>
+			<li module=dynamic-contact-us-lumino>Lumino</li>
         </ul>
     </div>
 </div>
@@ -11,7 +12,7 @@
       function F__ID(){
 		  //--------------------------------------------------------
 		  var group="";
-		  $vm.load_config_and_init("/configurations/contact-us.json",function(config){
+		  $vm.load_config_and_init("/configurations/dynamic-group-001.json",function(config){
 			  group=config.group; if(group!="") group=group+"_";
 		  });
 		  //--------------------------------------------------------

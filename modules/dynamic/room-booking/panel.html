@@ -1,8 +1,18 @@
 <div id=panel__ID>
     <div class='nav__ID'>
+	    <span>Calendar</span>
         <ul>
-            <li module=sydney>Sydney</li>
-			<li module=creative>Creative</li>
+			<li module=monthly>Room booking monthly calendar</li>
+			<li module=weekly>Room booking weekly calendar</li>
+			<li module=daily>Room booking daily calendar</li>
+        </ul>
+	    <span>Booking records</span>
+        <ul>
+			<li module=booking_record>Room booking records</li>
+        </ul>
+	    <span>Setup</span>
+        <ul>
+			<li module=room>Add/Remove rooms</li>
         </ul>
     </div>
 </div>
@@ -11,13 +21,15 @@
       function F__ID(){
 		  //--------------------------------------------------------
 		  var group="";
-		  $vm.load_config_and_init("/configurations/contact-us.json",function(config){
+		  var config="";
+		  $vm.load_config_and_init("/configurations/room-booking.json",function(cfg){
+			  config=cfg;
 			  group=config.group; if(group!="") group=group+"_";
 		  });
 		  //--------------------------------------------------------
 		  $('#panel__ID li').on('click',function(){
 			  var m=group+$(this).attr('module');
-			  $vm.nav_load_module(m);
+			  $vm.nav_load_module(m,undefined,config);
 		  })
 		  //--------------------------------------------------------
       }

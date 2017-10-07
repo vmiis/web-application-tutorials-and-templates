@@ -1,19 +1,19 @@
 <section>
-    VmInclude:__PARTS__/grid/grid.v3.html
+      VmInclude:__PARTS__/grid/grid.v3.html
 </section>
 <script>
     function F__ID(){
         //-------------------------------------
-        VmInclude:__PARTS__/grid/grid.v3.js
+        _fields="_Form,Image,Name,Description";
+        _fields+=",Submit Date|DateTime,Submitted by|Author,_Delete,_Hidden|Modified";
         //-------------------------------------
-		var fields="First_Name,Last_Name,Favorite_Color";
-        _fields="_Form,"+fields+",Submit Date|DateTime,Submitted by|Author,_Delete";
+        VmInclude:__PARTS__/grid/grid.v3.js
         //-------------------------------------
         _cell_render=function(records,I,field,td,set_value,source){
             switch(field){
-				case 'Favorite_Color':
-                    VmInclude:__PARTS__/grid/field_color.js
-                    break;
+                case 'Image':
+                    VmInclude:__PARTS__/grid/field_image.js
+                break;
             }
         }
         //-------------------------------------

@@ -6,16 +6,17 @@
 	{
 		"home":			{"url":"/modules/static/home-panel.html"},
 		"about":		{"url":"/modules/static/about/panel.html"},
-		
+
 		"home-page":	            	{"url":"/modules/static/home-page/panel.html"},
 		"static-wind-farm":	           	{"url":"/modules/static/wind-farm/panel.html"},
 		"static-group-001":	           	{"url":"/modules/static/group-001/panel.html"},
 		"dynamic-group-001":	        {"url":"/modules/dynamic/group-001/panel.html"},
 		"dynamic-room-booking":	        {"url":"/modules/dynamic/room-booking/panel.html"},
-		
-		
-		
-		
+        "dynamic-equipment-booking":	{"url":"/modules/dynamic/equipment-booking/panel.html"},
+
+
+
+
         "what-is-business-portal":		{"url":"/modules/static/about/what-is-business-portal.html"},
         "solutions":		            {"url":"/modules/static/about/solutions.html"},
         "structure":		            {"url":"/modules/static/about/structure.html"},

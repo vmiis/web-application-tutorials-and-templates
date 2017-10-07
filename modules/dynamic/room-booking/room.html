@@ -1,5 +1,5 @@
 <section>
-	VmInclude:__BASE__/vmiis/Common-Code/grid/grid.html
+	VmInclude:__PARTS__/grid/grid.v3.html
 </section>
 <script>
     function F__ID(){
@@ -8,13 +8,12 @@
         _fields="_Form,Number,Name,Description";
         _fields+=",Submit Date|DateTime,Submitted by|Author,_Delete";
         //-------------------------------------
-        VmInclude:__BASE__/vmiis/Common-Code/grid/grid.js
-        VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+        VmInclude:__PARTS__/grid/grid.v3.js
         //-------------------------------------
         $('#D__ID').on('load',function(){  _set_req(); _request_data();  })
         //-------------------------------------
     }
 </script>
 <style>
-    VmInclude:__BASE__/vmiis/Common-Code/grid/grid.css
+    VmInclude:__PARTS__/grid/grid.v3.css
 </style>

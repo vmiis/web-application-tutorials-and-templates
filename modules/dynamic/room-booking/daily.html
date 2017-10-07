@@ -1,18 +1,14 @@
 <section>
-      VmInclude:__BASE__/vmiis/Common-Code/toolbar/day.html
-      VmInclude:__BASE__/vmiis/Common-Code/calendar/day.html
+      VmInclude:__PARTS__/calendar/day.v3.html
 </section>
 <script>
 function F__ID(){
 	//--------------------------------------------------------
-	VmInclude:__BASE__/vmiis/Common-Code/toolbar/day_v2.js
-	VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+	VmInclude:__PARTS__/calendar/day.v3.js
 	//--------------------------------------------------------
-	$('#back__ID').hide();
-	var group=_sys.config.group; if(group!=undefined) group=group+"_";
-	var booking_record_module=group+'booking_record';
-	var booking_record_tid	=_mlist[booking_record_module].table_id;
-	var room_tid	 		=_mlist[group+'room'].table_id;
+    var booking_record_module=_group+'booking_record';
+	var booking_record_tid	 =_mlist[booking_record_module].table_id;
+	var room_tid	 		 =_mlist[_group+'room'].table_id;
 	//--------------------------------------------------------
 	_request_and_render=function(){
 	    layout_render();
@@ -145,7 +141,7 @@ function F__ID(){
 	    $('#date__ID').triggerHandler('change');
 	});
 	//--------------------------------------------------------
-	$('#D__ID').on('refresh_back',_request_and_render);
+    $('#D__ID').on('show',function(){_request_and_render();});
 	//--------------------------------------------------------
 }
 </script>

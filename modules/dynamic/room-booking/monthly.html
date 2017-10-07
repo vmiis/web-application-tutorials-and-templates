@@ -1,19 +1,14 @@
 <section>
-      VmInclude:__BASE__/vmiis/Common-Code/toolbar/month.html
-      VmInclude:__BASE__/vmiis/Common-Code/calendar/month.html
+      VmInclude:__PARTS__/calendar/month.v3.html
 </section>
 <script>
 function F__ID(){
 	//--------------------------------------------------------
-	VmInclude:__BASE__/vmiis/Common-Code/toolbar/month_v2.js
-	VmInclude:__BASE__/vmiis/Common-Code/calendar/month_v2.js
-	VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+	VmInclude:__PARTS__/calendar/month.v3.js
 	//--------------------------------------------------------
-	$('#back__ID').hide();
-	var group=_sys.config.group; if(group!=undefined) group=group+"_";
-	var daily_module=group+'daily';
-	var booking_record_module=group+'booking_record';
-	var booking_record_tid	 =_mlist[group+'booking_record'].table_id;
+	var daily_module=_group+'daily';
+	var booking_record_module=_group+'booking_record';
+	var booking_record_tid	 =_mlist[booking_record_module].table_id;
 	//-------------------------------------
 	_on_day_click_fun=function(date){
 		var this_mobj  =_mobj.op.mobj;
@@ -74,14 +69,14 @@ function F__ID(){
 		});
 	}
 	//--------------------------------------------------------
-	$('#D__ID').on('load',_request_and_render);
-	$('#D__ID').on('refresh_back',_request_and_render);
+	$('#D__ID').on('load',function(){_request_and_render();});
+	$('#D__ID').on('show',function(){_request_and_render();});
 	//--------------------------------------------------------
 }
 </script>
 <style>
     #D__ID{
         overflow: hidden;
-        background: url("__BASE__/vmiis/common-code/image/texture.png");
+        background: url("__PARTS__/image/texture.png");
     }
 </style>

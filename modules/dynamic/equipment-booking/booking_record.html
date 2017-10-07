@@ -3,25 +3,20 @@
 </section>
 <script>
     function F__ID(){
- 		$('#back__ID').hide();
-       //-------------------------------------
+        //-------------------------------------
         VmInclude:__PARTS__/grid/grid.v3.js
         //-------------------------------------
-        _fields="_Form,Room_Number,Room_Name,Date,Time,Duration,Color,Description,Contact_Name,Contact_Phone,Contact_Email";
+        _fields="_Form,Equipment,Date,Time,Duration,Color,Description,Contact_Name,Contact_Phone,Contact_Email";
         _fields+=",Submit Date|DateTime,Submitted by|Author,_Delete";
-        //-------------------------------------
-        $('#new__ID').hide(); //always hide
-        //-------------------------------------
-        $('#D__ID').on('load',function(){  _set_req(); _request_data();  })
         //-------------------------------------
         _cell_render=function(records,I,field,td,set_value,source){
             switch(field){
                 case 'Date':
                     VmInclude:__PARTS__/grid/field_date.js
-                    break;
+                break;
                 case 'Time':
                     VmInclude:__PARTS__/grid/field_time.js
-                    break;
+                break;
                 case 'Duration':
                     var html="<select style='border:0;''>\
                             <option>0.5</option>\
@@ -47,19 +42,22 @@
                         </select>\
                     ";
                     VmInclude:__PARTS__/grid/field_select.js
-                    break;
+                break;
                 case 'Color':
                     VmInclude:__PARTS__/grid/field_color.js
-                    break;
+                break;
             }
+            //-------------------------------------
         }
         //-------------------------------------
+        $('#D__ID').on('load',function(){  _set_req(); _request_data();  })
+        //-------------------------------------
         _before_submit=function(record,dbv){
-            if($vm.vm['__ID'].op.room_uid!==undefined) dbv.PUID= $vm.vm['__ID'].op.room_uid;
+            if($vm.vm['__ID'].op.equipment_uid!==undefined) dbv.PUID= $vm.vm['__ID'].op.equipment_uid;
             dbv.DT1=record.Date;
             dbv.S1=record.Time;
             dbv.V1=record.Duration;
-            dbv.S2=record.Room_Number;
+            dbv.S2=record.Equipment;
             return true;
         };
         //-------------------------------------
@@ -73,8 +71,7 @@
         _new_pre_data_process=function(){
             if($vm.vm['__ID'].op.date!==undefined) _records[0].Date=$vm.vm['__ID'].op.date;
             if($vm.vm['__ID'].op.time!==undefined) _records[0].Time=$vm.vm['__ID'].op.time;
-            if($vm.vm['__ID'].op.room_name!==undefined)  _records[0].Room_Name=$vm.vm['__ID'].op.room_name;
-            if($vm.vm['__ID'].op.room_number!==undefined)  _records[0].Room_Number=$vm.vm['__ID'].op.room_number;
+            if($vm.vm['__ID'].op.equipment_name!==undefined)  _records[0].Equipment=$vm.vm['__ID'].op.equipment_name;
             _records[0].Color="#008800";
             _records[0].Duration="1.0";
         }
@@ -87,6 +84,7 @@
         //-------------------------------------
         _set_req=function(){
             //-------------------
+            $('#new__ID').hide(); //always hide
             $('#multi__ID').show();
             if($vm.vm['__ID'].op.new!==undefined || $vm.vm['__ID'].op.sql_where!==undefined){
                 $('#multi__ID').hide();

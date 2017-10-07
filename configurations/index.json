@@ -65,7 +65,11 @@
 		"service-lexis":				{"url":"/modules/static/group-001/service-lexis.html"},
 		"work-lexis":					{"url":"/modules/static/group-001/work-lexis.html"},
 		"team-lexis":					{"url":"/modules/static/group-001/team-lexis.html"},
-		"particles-VincentGarreau":				{"url":"/modules/static/group-001/particles-VincentGarreau.html"}
-		
+		"particles-particles":			{"url":"/modules/static/group-001/particles-particles.html"},
+		"particles-nasa":				{"url":"/modules/static/group-001/particles-nasa.html"},
+		"particles-bubble":				{"url":"/modules/static/group-001/particles-bubble.html"},
+		"particles-snow":				{"url":"/modules/static/group-001/particles-snow.html"},
+		"particles-nyan-cat":			{"url":"/modules/static/group-001/particles-nyan-cat.html"}
 	}
 }
+

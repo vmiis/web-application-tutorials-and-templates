@@ -49,6 +49,11 @@
 			<li module=date>Data field -- date</li>
 			<li module=file>Data field -- file</li>
 			<li module=image>Data field -- image</li>
+			<li module=autocomplete>Data field -- autocomplete</li>
+			<li module=autocomplete_with_new>Data field -- autocomplete (with 'new' link)</li>
+			<li module=postcode>Data field -- postcode</li>
+			<li module=calculation>Data field -- calculation</li>
+			
             <li module=contact-us-record>Contact us records</li>
 	    </ul>
         <ul>
@@ -104,11 +109,6 @@
 		  $('#page__ID li').on('click',function(){
 			  var m=$(this).attr('module');
               if(m!=undefined){
-	              /*
-				  $vm.hash_index++;
-				  $vm.last_hash="#"+$vm.hash_index;
-				  location.hash=$vm.hash_index;
-				  */
 				  $vm.nav_load_module(m);
 			  }
 		  })

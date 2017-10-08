@@ -26,6 +26,11 @@ VmInclude:/modules/layout/footer.html
 		//-----------------------------------------
 		$vm.nav_load_module('home');
 		//------------------------------------
+		var modules=$vm.app_config.modules;
+		for (var property in modules) {
+		   if($vm.module_list[property]==undefined) $vm.module_list[property]=modules[property];
+		}
+		//------------------------------------
 		/*
 		var $image1 = $("<img>");
 		$image1.on('load',(function(){ $('body').css("background", "url("+$(this).attr("src")+") no-repeat bottom center"); $('body').css("background-size", "cover");  }));

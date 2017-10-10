@@ -110,14 +110,14 @@
 				//--------------------------------------------------------
 				$vm.url=function(text){
 					//replace some text in old modules to the correct ones
-					text=text.replace(/__BASE__\/vmiis\/Common-Code\//g,'__COMPONTENT__/');
-					text=text.replace(/__LIB__\/vmiis\/Common-Code\//g,'__COMPONTENT__/');
-					text=text.replace(/__BASE__\/vmiis\/common-code\//g,'__COMPONTENT__/');
-					text=text.replace(/__LIB__\/vmiis\/common-code\//g,'__COMPONTENT__/');
+					text=text.replace(/__BASE__\/vmiis\/Common-Code\//g,'__COMPONENT__/');
+					text=text.replace(/__LIB__\/vmiis\/Common-Code\//g,'__COMPONENT__/');
+					text=text.replace(/__BASE__\/vmiis\/common-code\//g,'__COMPONENT__/');
+					text=text.replace(/__LIB__\/vmiis\/common-code\//g,'__COMPONENT__/');
 					text=text.replace(/__BASE__\//g,$vm.library_path+'/');
 					text=text.replace(/__LIB__\//g,$vm.library_path+'/');
 					text=text.replace(/__PARTS__\//g,'https://vmiis.github.io/component/');
-					text=text.replace(/__COMPONTENT__\//g,'https://vmiis.github.io/component/');
+					text=text.replace(/__COMPONENT__\//g,'https://vmiis.github.io/component/');
 					text=text.replace(/__HOST__\//g,$vm.hosting_path+'/');
 					text=text.replace(/__VER__/g,$vm.version);
 					text=text.replace(/__IMAGE__\//g,$vm.image_path+'/');
@@ -159,13 +159,13 @@
 				var last=function(){
 					//at last point we will load some modules for ready to use
 			        //-------------------------------------
-					$vm.module_list['alert_dialog_module']={table_id:'--------',url:'__PARTS__/dialog/alert_dialog_module.html'};
+					$vm.module_list['alert_dialog_module']={table_id:'--------',url:'__COMPONENT__/dialog/alert_dialog_module.html'};
 			        $vm.load_module_by_name('alert_dialog_module','',{})
 			        //-------------------------------------
-			        $vm.module_list['_system_export_dialog_module']={table_id:'',url:'__PARTS__/dialog/export_dialog_module.html'};
+			        $vm.module_list['_system_export_dialog_module']={table_id:'',url:'__COMPONENT__/dialog/export_dialog_module.html'};
 			        $vm.load_module_by_name('_system_export_dialog_module','',{})
 			        //-------------------------------------
-			        $vm.module_list['_system_import_dialog_module']={table_id:'',url:'__PARTS__/dialog/import_dialog_module.html'};
+			        $vm.module_list['_system_import_dialog_module']={table_id:'',url:'__COMPONENT__/dialog/import_dialog_module.html'};
 			        $vm.load_module_by_name('_system_import_dialog_module','',{})
 			        //-------------------------------------
 					setTimeout(function (){

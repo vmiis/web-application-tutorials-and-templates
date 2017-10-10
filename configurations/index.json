@@ -1,4 +1,5 @@
 {
+	"parts_path":"https://vmiis.github.io/component",
 	"api_path_development":"https://cbs.wappsystem.com/dev/",
 	"api_path_production":"https://cbs.wappsystem.com/dev/",
 	"modules":

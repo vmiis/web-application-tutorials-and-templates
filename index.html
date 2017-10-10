@@ -6,7 +6,7 @@
 		<meta name='viewport' content='width=device-width, initial-scale=1'>
 		<meta name="description" content="web application, business portal, business management, open-source software (OSS), single-page application (SPA),	software as a service (SaaS), responsive web design (RWD), modular based and distributed web applications, online database">
 		<meta name="author" content="Zhiming Zhou, zzm.vmiis@gmail.com">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
 		<script vm-js-start-code>
@@ -110,13 +110,14 @@
 				//--------------------------------------------------------
 				$vm.url=function(text){
 					//replace some text in old modules to the correct ones
-					text=text.replace(/__BASE__\/vmiis\/Common-Code\//g,'__PARTS__/');
-					text=text.replace(/__LIB__\/vmiis\/Common-Code\//g,'__PARTS__/');
-					text=text.replace(/__BASE__\/vmiis\/common-code\//g,'__PARTS__/');
-					text=text.replace(/__LIB__\/vmiis\/common-code\//g,'__PARTS__/');
+					text=text.replace(/__BASE__\/vmiis\/Common-Code\//g,'__COMPONTENT__/');
+					text=text.replace(/__LIB__\/vmiis\/Common-Code\//g,'__COMPONTENT__/');
+					text=text.replace(/__BASE__\/vmiis\/common-code\//g,'__COMPONTENT__/');
+					text=text.replace(/__LIB__\/vmiis\/common-code\//g,'__COMPONTENT__/');
 					text=text.replace(/__BASE__\//g,$vm.library_path+'/');
 					text=text.replace(/__LIB__\//g,$vm.library_path+'/');
-					text=text.replace(/__PARTS__\//g,$vm.parts_path+'/');
+					text=text.replace(/__PARTS__\//g,'https://vmiis.github.io/component/');
+					text=text.replace(/__COMPONTENT__\//g,'https://vmiis.github.io/component/');
 					text=text.replace(/__HOST__\//g,$vm.hosting_path+'/');
 					text=text.replace(/__VER__/g,$vm.version);
 					text=text.replace(/__IMAGE__\//g,$vm.image_path+'/');
@@ -172,8 +173,11 @@
 						$('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>");
 						$('head').append("<link rel='stylesheet' href='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/themes/redmond/jquery-ui.css'>");
 						$.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
-						$.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
-				        $.getScript('https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.min.js');
+						
+                        $.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
+                        $.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js');
+				        
+						$.getScript('https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.min.js');
 				        $.getScript('https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js');
 				        $.getScript('https://sdk.amazonaws.com/js/aws-sdk-2.1.34.min.js');
 						$.getScript('https://www.gstatic.com/charts/loader.js',function(){

@@ -40,35 +40,6 @@ VmInclude:/modules/layout/footer.html
 		$image1.attr("src", "__HOST__/images/background.jpg");
 		*/
 		//------------------------------------
-		var groups=[
-			'static-group-001.json',
-			'dynamic-group-001.json'
-		];		
-		var N=groups.length;
-		//------------------------------------
-		for(var i=0;i<N;i++){
-			var url=$vm.hosting_path+"/configurations/"+groups[i];;
-			var ver=localStorage.getItem(url+"_ver");
-			var txt=localStorage.getItem(url+"_txt");
-			if(ver!=$vm.version || txt===null || $vm.debug===true || $vm.reload!=''){
-				console.log('loading '+url+'?_='+$vm.version+$vm.reload);
-				$.get(url+'?_='+$vm.version+$vm.reload,function(data){
-					localStorage.setItem(url+"_txt",data);
-					localStorage.setItem(url+"_ver",$vm.version);
-					add_to_module_list(data);;
-				},'text').fail(function() {
-					alert( "The configuration file ("+url+") doesn't exist!" );
-				});
-			}
-			else{ add_to_module_list(txt); }
-			
-			
-			$.get(url+'?_='+$vm.version+$vm.reload,function(data){
-			},'text').fail(function() {
-				alert( "The configuration file ("+url+") doesn't exist!" );
-			});
-		}
-		//------------------------------------
 		var add_to_module_list=function(text){
 			var config;
 			try{ config=JSON.parse(text);}
@@ -100,6 +71,35 @@ VmInclude:/modules/layout/footer.html
 		    	$("#vm_system_search").focus(function(){$("#vm_system_search").autocomplete("search","");});
 				if(vm_start!=undefined){vm_start();}
 			}
+		}
+		//------------------------------------
+		var groups=[
+			'static-group-001.json',
+			'dynamic-group-001.json'
+		];		
+		var N=groups.length;
+		//------------------------------------
+		for(var i=0;i<N;i++){
+			var url=$vm.hosting_path+"/configurations/"+groups[i];;
+			var ver=localStorage.getItem(url+"_ver");
+			var txt=localStorage.getItem(url+"_txt");
+			if(ver!=$vm.version || txt===null || $vm.debug===true || $vm.reload!=''){
+				console.log('loading '+url+'?_='+$vm.version+$vm.reload);
+				$.get(url+'?_='+$vm.version+$vm.reload,function(data){
+					localStorage.setItem(url+"_txt",data);
+					localStorage.setItem(url+"_ver",$vm.version);
+					add_to_module_list(data);;
+				},'text').fail(function() {
+					alert( "The configuration file ("+url+") doesn't exist!" );
+				});
+			}
+			else{ add_to_module_list(txt); }
+			
+			
+			$.get(url+'?_='+$vm.version+$vm.reload,function(data){
+			},'text').fail(function() {
+				alert( "The configuration file ("+url+") doesn't exist!" );
+			});
 		}
 		//------------------------------------
 	}

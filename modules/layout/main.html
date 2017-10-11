@@ -30,7 +30,7 @@ VmInclude:/modules/layout/footer.html
 		for (var property in modules) {
 		   if($vm.module_list[property]==undefined){
 			   	$vm.module_list[property]=modules[property];
-				availableTags.push(property);
+				availableTags.push({label:property,value:property})
 		   }
 		}
 		//------------------------------------
@@ -51,7 +51,7 @@ VmInclude:/modules/layout/footer.html
 			for (var property in modules) {
 			   if($vm.module_list[group+property]==undefined){
 				   $vm.module_list[group+property]=modules[property];
-				   availableTags.push(group+property);
+				   availableTags.push({label:property,value:group+property})
 			   }
 			}
 			N--;

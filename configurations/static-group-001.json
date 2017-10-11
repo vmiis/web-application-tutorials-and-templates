@@ -10,6 +10,9 @@
 		"home-page-lexis":	       	{"url":"/modules/static/group-001/home-page-lexis.html"},
 
 		"contact-us-sydney":			{"url":"/modules/static/group-001/contact-us-sydney.html"},
-        "contact-us-creative":	       	{"url":"/modules/static/group-001/contact-us-creative.html"}
+        "contact-us-creative":	       	{"url":"/modules/static/group-001/contact-us-creative.html"},
+        
+        
+        "scenery-rspilhaus":			{"url":"/modules/static/group-001/scenery-rspilhaus.html"}
 	}
 }

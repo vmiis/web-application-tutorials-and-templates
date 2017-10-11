@@ -1,5 +1,5 @@
 <div header id=header__ID> <!-- bg-dark-->
-    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark" style='z-index:99999'>
+    <nav id=nav__ID class="navbar navbar-expand-md navbar-dark">
         <a class="navbar-brand d-none d-lg-inline-block" onclick="$vm.nav_load_module('home');">
         	<div class=large_logo__ID>
 	        	<div class="logo_image__ID"></div>
@@ -8,7 +8,7 @@
 	                    Web Application Tutorials and Templates
 	                </div>
 	                <div class="large_logo_small_label__ID">
-	                    Open source (https://github.com/vmiis), modular based and distributed web application
+	                    Open source (https://github.com/vmiis), modular distributed web applications
 	                </div>
 	            </div>
 	        </div>
@@ -27,8 +27,10 @@
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('about');"><i class="fa fa-info-circle"></i> About</a></li>
                 <li><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
             </ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search" />
+			</form>            
         </div>
-        
     </nav>
     <script>
         //---------------------------------------------
@@ -51,12 +53,16 @@
             cursor:pointer;
         }
         #navbars__ID{
-	        padding-top:30px;
+	        padding-top:55px;
+            padding-left:90px;
+        }
+        #nav__ID{
+	        z-index:99;
         }
         
         .large_logo__ID{
             color:#fff;
-            padding-left:80px;
+            padding-left:30px;
             display:table;
         }
 		.logo_image__ID{
@@ -77,13 +83,10 @@
             font-size:140%;
         }
         .large_logo_small_label__ID{
-            font-size:64%;
+            font-size:75%;
         }
         .small_logo__ID{
             color:#fff;
-        }
-        #navbars__ID{
-            padding-left:90px;
         }
 		@media screen and (min-width:768px){
 			#nav__ID{
@@ -95,6 +98,10 @@
 	        	padding:auto;
 				background-color:#555;
 			}
+	        #navbars__ID{
+		        padding-top:5px;
+		        padding-left:5px;
+	        }
 		}
     </style>
 </div>

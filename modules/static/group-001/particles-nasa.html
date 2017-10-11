@@ -17,10 +17,10 @@
         //--------------------------------------------------------
 		window.addEventListener('message', function(e) {
 			if(e.data.sandbox_id=='sandbox__ID'){
-                if(e.data.cmd==1){
-				    $vm.nav_load_module('simple-static-content-module');
+                if(e.data.cmd=="link"){
+				    $vm.nav_load_module(e.data.module);
                 }
-                else if(e.data.cmd==3){
+                else if(e.data.cmd=="source"){
 					$vm.url_source(url_content);
                 }
 			}

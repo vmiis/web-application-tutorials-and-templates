@@ -16,7 +16,7 @@
 				$('body').on('dblclick',function(){
 					if(event.altKey){
 						id=window.location.href.split('id=').pop()
-						window.parent.postMessage({sandbox_id:'sandbox'+id,id:id,cmd:3},"*")
+						window.parent.postMessage({sandbox_id:'sandbox'+id,id:id,cmd:"source"},"*")
 					}
 				})
 			})

@@ -7,12 +7,18 @@
 	  	  <hr style='border-top:1px solid #f05f40;'></hr>
 	  	  <p>We can build a web application with unlimited number of modules distributed on different static web servers around the world and maintained by different people with different skills!</p>
 		  <br>
-	  	  <button type="button" class="btn btn-primary">Find Out More</button>
+	  	  <button id="a1" class="btn btn-primary">Booking a Room</button>
 		  <br><br>
 		  <br><br>
 		</div>
 	</div>
 </div> 
+<script>
+	$('#a1').on('click',function(){
+		id=window.location.href.split('id=').pop()
+		window.parent.postMessage({sandbox_id:'sandbox'+id,cmd:"link",module:"room-booking_daily"},"*")
+	})
+</script>
  
  
 <script>

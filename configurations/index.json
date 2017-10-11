@@ -7,7 +7,6 @@
 		"home":			{"url":"/modules/static/home-panel.html"},
 		"about":		{"url":"/modules/static/about/panel.html"},
 
-		"home-page":	            	{"url":"/modules/static/home-page/panel.html"},
 		"static-wind-farm":	           	{"url":"/modules/static/wind-farm/panel.html"},
 		"static-group-001":	           	{"url":"/modules/static/group-001/panel.html"},
 		"dynamic-group-001":	        {"url":"/modules/dynamic/group-001/panel.html"},
@@ -80,7 +79,12 @@
 		"particles-nasa":				{"url":"/modules/static/group-001/particles-nasa.html"},
 		"particles-bubble":				{"url":"/modules/static/group-001/particles-bubble.html"},
 		"particles-snow":				{"url":"/modules/static/group-001/particles-snow.html"},
-		"particles-nyan-cat":			{"url":"/modules/static/group-001/particles-nyan-cat.html"}
+		"particles-nyan-cat":			{"url":"/modules/static/group-001/particles-nyan-cat.html"},
+		
+		"windfarm_home":					{"url":"/modules/static/wind-farm/home.html"},
+		"windfarm_purpose-of-research":		{"url":"/modules/static/wind-farm/purpose-of-research.html"},
+		"windfarm_about-woolcock-research":	{"url":"/modules/static/wind-farm/about-woolcock-research.html"},
+		"windfarm_researcher":				{"url":"/modules/static/wind-farm/researcher.html"}
 	}
 }
 

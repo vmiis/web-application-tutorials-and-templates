@@ -145,9 +145,6 @@ var vm_init=function(){
 	var last=function(){
 		//at last point we will load some modules for ready to use
         //-------------------------------------
-		$vm.module_list['alert_dialog_module']={table_id:'--------',url:'__COMPONENT__/dialog/alert_dialog_module.html'};
-        $vm.load_module_by_name('alert_dialog_module','',{})
-        //-------------------------------------
         $vm.module_list['_system_export_dialog_module']={table_id:'',url:'__COMPONENT__/dialog/export_dialog_module.html'};
         $vm.load_module_by_name('_system_export_dialog_module','',{})
         //-------------------------------------
@@ -160,10 +157,10 @@ var vm_init=function(){
 //			$('head').append("<link rel='stylesheet' href='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/themes/redmond/jquery-ui.css'>");
 			$('head').append("<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>");
 			$.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
-			
+
             $.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
             $.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js');
-	        
+
 			//$.getScript('https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.min.js');
 	        $.getScript('https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js');
 	        $.getScript('https://sdk.amazonaws.com/js/aws-sdk-2.1.34.min.js');
@@ -180,4 +177,3 @@ var vm_init=function(){
 	}
 	//********************************************************
 }
-			

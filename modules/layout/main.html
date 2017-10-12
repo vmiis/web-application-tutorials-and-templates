@@ -35,10 +35,17 @@ VmInclude:/modules/layout/footer.html
 		}
 		//------------------------------------
 		/*
+		This is the place we can add background image to body (Asynchronous)
 		var $image1 = $("<img>");
 		$image1.on('load',(function(){ $('body').css("background", "url("+$(this).attr("src")+") no-repeat bottom center"); $('body').css("background-size", "cover");  }));
 		$image1.attr("src", "__HOST__/images/background.jpg");
 		*/
+		//------------------------------------
+		//over write vm alert
+		$vm.alert=function(msg){
+			$('#vm_alert_information div.modal-body').html( $('<div/>').html(msg).text() );
+			$("#vm_alert_information").modal();
+		}
 		//------------------------------------
 		var add_to_module_list=function(text){
 			var config;
@@ -61,10 +68,11 @@ VmInclude:/modules/layout/footer.html
 					source: function(request, response) {
         				var results=$.ui.autocomplete.filter(availableTags, request.term);
         				response(results.slice(0, 10));
-    				},		      		
+    				},
 		      		select: function(event,ui) {
 						event.preventDefault();
 						$('.navbar-collapse').collapse('hide');
+						$("#vm_system_search").val('');
 			      		$vm.nav_load_module(ui.item.value);
 			      	}
 		    	});
@@ -76,7 +84,7 @@ VmInclude:/modules/layout/footer.html
 		var groups=[
 			'static-group-001.json',
 			'dynamic-group-001.json'
-		];		
+		];
 		var N=groups.length;
 		//------------------------------------
 		for(var i=0;i<N;i++){
@@ -94,8 +102,6 @@ VmInclude:/modules/layout/footer.html
 				});
 			}
 			else{ add_to_module_list(txt); }
-			
-			
 			$.get(url+'?_='+$vm.version+$vm.reload,function(data){
 			},'text').fail(function() {
 				alert( "The configuration file ("+url+") doesn't exist!" );

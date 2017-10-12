@@ -36,9 +36,9 @@
 			<li module=windfarm_about-woolcock-research>About woolcock research</li>
             <li module=windfarm_researcher>Researchers</li>
             <li module=static-group_001_scenery-rspilhaus>Scenery</li>
-            
-            
-			
+
+
+
 		</ul>
 		<ul>
 			<li module=static-group-001 style='list-style-type: circle;'>More modules...</li>
@@ -69,6 +69,31 @@
 			<li module=room-booking_daily>Booking a room</li>
 			<li module=room-booking_booking_record>Check all room booking records</li>
 			<li module=room-booking_room>Add or remove a room</li>
+
+			<li module=dynamic-group_001_short-sleep-history>Short sleep history</li>
+			<li module=dynamic-group_001_short-sleep-history-data>Short sleep history (admin)</li>
+
+			<li module=dynamic-group_001_sleep-history>Short history</li>
+			<li module=dynamic-group_001_sleep-history-data>Sleep history (admin)</li>
+
+			<li module=dynamic-group_001_health-history>Health history</li>
+			<li module=dynamic-group_001_health-history-data>Health history (admin)</li>
+<!--
+			<li module=dynamic-group_001_personal>Personal</li>
+			<li module=dynamic-group_001_personal>Personal (admin)</li>
+
+			<li module=dynamic-group_001_medicare-referrals>Medicare referrals</li>
+			<li module=dynamic-group_001_medicare-referrals>Medicare referrals (admin)</li>
+
+			<li module=dynamic-group_001_epworth-sleepiness-scale>Epworth sleepiness scale</li>
+			<li module=dynamic-group_001_epworth-sleepiness-scale>Epworth sleepiness scale (admin)</li>
+			<li module=dynamic-group_001_additional-questions>Additional questions</li>
+			<li module=dynamic-group_001_additional-questions>Additional questions (admin)</li>
+		-->
+
+
+
+
 	    </ul>
         <ul>
 			<li module=dynamic-group-001 style='list-style-type: circle;'>More modules...</li>
@@ -120,13 +145,39 @@
 		</ul>
 	</div>
 </section>
+
 <script>
       function F__ID(){
+
 		  $('#page__ID li').on('click',function(){
 			  var m=$(this).attr('module');
               if(m!=undefined){
-				  $vm.nav_load_module(m);
+				  if($vm.module_list[m]==undefined){
+					  alert("The module '"+m+"' doesn't exist in the module list (not in the config files).")
+				  }
+				  else{
+					  if($vm.module_list[m].url==undefined){
+						  alert("The module "+m+" exists in the module list but no url was found.")
+					  }
+					  else{
+						  $vm.module_list[m].alert='1';
+						  $vm.nav_load_module(m);
+					  }
+				  }
 			  }
+		  })
+		  $('#D__ID').on('show',function(){
+			  	/*
+			  	module_name=$vm['vm_history_last_module_name'];
+				if(module_name!='' && module_name!=undefined){
+					module_submit=$vm['vm_history_last_module_submit'];
+					if(module_submit=='1'){
+						$vm.alert('Your data has been successfully submitted')
+					}
+					$vm['vm_history_last_module_name']='';
+					$vm['vm_history_last_module_submit']='';
+				}
+				*/
 		  })
       }
 </script>

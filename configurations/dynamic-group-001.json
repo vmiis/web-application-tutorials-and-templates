@@ -3,6 +3,20 @@
 	"modules":
 	{
 		"dynamic-contact-us-lumino":			{"url":"/modules/dynamic/group-001/contact-us-lumino.html"},
-        "dynamic-contact-us-studio":	       	{"url":"/modules/dynamic/group-001/contact-us-studio.html"}
+        "dynamic-contact-us-studio":	       	{"url":"/modules/dynamic/group-001/contact-us-studio.html"},
+		"short-sleep-history":					{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/task/short-sleep-history.html","table_id":"20011176"},
+		"short-sleep-history-data":				{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/data/short-sleep-history.html","table_id":"20011176"},
+		"sleep-history":						{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/task/sleep-history.html","table_id":"20011309"},
+		"sleep-history-data":					{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/data/sleep-history.html","table_id":"20011309"},
+		"health-history":						{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/task/health-history.html","table_id":"20011308"},
+		"health-history-data":					{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/data/health-history.html","table_id":"20011308"},
+		"personal":								{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/task/personal.html","table_id":"20011312"},
+		"personal-data":						{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/data/personal.html","table_id":"20011312"},
+		"medicare-referrals":					{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/task/medicare-referrals.html","table_id":"20011175"},
+		"medicare-referrals-data":				{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/data/medicare-referrals.html","table_id":"20011175"},
+		"epworth-sleepiness-scale":				{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/task/epworth-sleepiness-scale.html","table_id":"20011311"},
+		"epworth-sleepiness-scale-data":		{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/data/epworth-sleepiness-scale.html","table_id":"20011311"},
+		"additional-questions":					{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/task/additional-questions.html","table_id":"20011310"},
+		"additional-questions-data":			{"url":"https://woolcock-imr.github.io/clinic-online-questionnaire/modules/dynamic/data/additional-questions.html","table_id":"20011310"}
 	}
 }

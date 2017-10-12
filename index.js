@@ -3,7 +3,7 @@ var vm_init=function(){
 	var data=''; for(var key in window.localStorage){ if(window.localStorage.hasOwnProperty(key)){ data+=window.localStorage[key]; }}
 	if(data.length>3000000) localStorage.clear();
 	//set name space
-	$vm={}; $VmAPI={};$vm.module_list={};$vm.config_list={}
+	$VmAPI={};$vm.module_list={};$vm.config_list={}
 	//--------------------------------------------------------
 	//get hosting path
 	var href = window.location.href.split('?')[0];
@@ -17,20 +17,18 @@ var vm_init=function(){
 	if(window.location.toString().indexOf('_d=3')!=-1){
 		$vm.reload=new Date().getTime().toString();
 	}
-	var url=$vm.hosting_path+'/version.html?_='+new Date().getTime().toString();
-	console.log('loading '+url);
-	$.get(url,function(ver){ $vm.version=ver.trim(); load_config_and_init();},'text')
+	$vm.version=$vm.ver[0];
 	//--------------------------------------------------------
 	var load_config_and_init=function(){
 		var url=$vm.hosting_path+"/configurations/index.json";
 		var ver=localStorage.getItem(url+"_ver");
 		var txt=localStorage.getItem(url+"_txt");
 		//------------------------------------------
-		if(ver!=$vm.version || txt===null || $vm.debug===true || $vm.reload!=''){
-			console.log('loading '+url+'?_='+$vm.version+$vm.reload);
-			$.get(url+'?_='+$vm.version+$vm.reload,function(data){
+		if(ver!=$vm.ver[1] || txt===null || $vm.debug===true || $vm.reload!=''){
+			console.log('loading '+url+'?_='+$vm.ver[1]+$vm.reload);
+			$.get(url+'?_='+$vm.ver[1]+$vm.reload,function(data){
 				localStorage.setItem(url+"_txt",data);
-				localStorage.setItem(url+"_ver",$vm.version);
+				localStorage.setItem(url+"_ver",$vm.ver[1]);
 				app_init(data);;
 			},'text').fail(function() {
 				alert( "The configuration file ("+url+") doesn't exist!" );
@@ -57,12 +55,12 @@ var vm_init=function(){
 		}
 		//--------------------------------------------------------
 		if(window.location.toString().indexOf('database=production')!=-1){
-			//connect to the wappsystem database
+			//connect to private database
 			$vm.server          ='production';
 			$VmAPI.api_base     =config.api_path_production;
 		}
 		else{
-			//connect to a public demonstration database
+			//connect to a public database
 			$vm.server          ='development';
 			$VmAPI.api_base     =config.api_path_development;
 		}
@@ -81,11 +79,11 @@ var vm_init=function(){
 		var ver=localStorage.getItem(url+"_ver");
 		var txt=localStorage.getItem(url+"_txt");
 		//------------------------------------------
-		if(ver!=$vm.version || txt===null || $vm.debug===true || $vm.reload!=''){
-			console.log('loading '+url+'?_='+$vm.version+$vm.reload);
-			$.get(url+'?_='+$vm.version+$vm.reload,function(data){
+		if(ver!=$vm.ver[2] || txt===null || $vm.debug===true || $vm.reload!=''){
+			console.log('loading '+url+'?_='+$vm.ver[2]+$vm.reload);
+			$.get(url+'?_='+$vm.ver[2]+$vm.reload,function(data){
 				localStorage.setItem(url+"_txt",data);
-				localStorage.setItem(url+"_ver",$vm.version);
+				localStorage.setItem(url+"_ver",$vm.ver[2]);
 				$('head').append('<scr'+'ipt>'+data+'</scr'+'ipt>');
 				next();
 			},'text');
@@ -105,7 +103,7 @@ var vm_init=function(){
 		text=text.replace(/__PARTS__\//g,'https://vmiis.github.io/component/');
 		text=text.replace(/__COMPONENT__\//g,'https://vmiis.github.io/component/');
 		text=text.replace(/__HOST__\//g,$vm.hosting_path+'/');
-		text=text.replace(/__VER__/g,$vm.version);
+		text=text.replace(/__VER__/g,$vm.ver[0]);
 		text=text.replace(/__IMAGE__\//g,$vm.image_path+'/');
 		if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost'){
 			//use local version
@@ -154,14 +152,12 @@ var vm_init=function(){
 		setTimeout(function (){
 	        $.ajaxSetup({ cache: true });
 			$('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>");
-//			$('head').append("<link rel='stylesheet' href='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/themes/redmond/jquery-ui.css'>");
 			$('head').append("<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>");
 			$.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
 
             $.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
             $.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js');
 
-			//$.getScript('https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.min.js');
 	        $.getScript('https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js');
 	        $.getScript('https://sdk.amazonaws.com/js/aws-sdk-2.1.34.min.js');
 			$.getScript('https://www.gstatic.com/charts/loader.js',function(){
@@ -175,5 +171,7 @@ var vm_init=function(){
 			ga('send', 'pageview');
 	    }, 10);
 	}
+	//********************************************************
+	load_config_and_init();
 	//********************************************************
 }

@@ -47,7 +47,7 @@ VmInclude:/modules/layout/footer.html
 			$("#vm_alert_information").modal();
 		}
 		//------------------------------------
-		var add_to_module_list=function(text){
+		var add_config_modules_to_module_list_and_start=function(text){
 			var config;
 			try{ config=JSON.parse(text);}
 			catch (e){ alert("Error in config file\n"+e); return; }
@@ -91,21 +91,17 @@ VmInclude:/modules/layout/footer.html
 			var url=$vm.hosting_path+"/configurations/"+groups[i];;
 			var ver=localStorage.getItem(url+"_ver");
 			var txt=localStorage.getItem(url+"_txt");
-			if(ver!=$vm.version || txt===null || $vm.debug===true || $vm.reload!=''){
-				console.log('loading '+url+'?_='+$vm.version+$vm.reload);
-				$.get(url+'?_='+$vm.version+$vm.reload,function(data){
+			if(ver!=$vm.ver[1] || txt===null || $vm.debug===true || $vm.reload!=''){
+				console.log('loading '+url+'?_='+$vm.ver[1]+$vm.reload);
+				$.get(url+'?_='+$vm.ver[1]+$vm.reload,function(data){
 					localStorage.setItem(url+"_txt",data);
-					localStorage.setItem(url+"_ver",$vm.version);
-					add_to_module_list(data);;
+					localStorage.setItem(url+"_ver",$vm.ver[1]);
+					add_config_modules_to_module_list_and_start(data);;
 				},'text').fail(function() {
 					alert( "The configuration file ("+url+") doesn't exist!" );
 				});
 			}
-			else{ add_to_module_list(txt); }
-			$.get(url+'?_='+$vm.version+$vm.reload,function(data){
-			},'text').fail(function() {
-				alert( "The configuration file ("+url+") doesn't exist!" );
-			});
+			else{ add_config_modules_to_module_list_and_start(txt); }
 		}
 		//------------------------------------
 	}
@@ -118,17 +114,11 @@ VmInclude:/modules/layout/footer.html
 		from { opacity:0; }
 		to {opacity:1;}
 	}
-	/* overwrite bootstrap */
-	/*
-	.ui-datepicker-month,.ui-datepicker-year{
-		color:#000;
-	}
-	*/
     .ui-autocomplete.ui-menu{font-size:12px}
-    .ui-autocomplete li:hover{
-        color:White;
-        background:#96B202;
-        font-weight:normal;
-        outline:none;
-    }
+	.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+	    color:White;
+	    background:#75A9A9;
+	    font-weight:normal;
+	    outline:none;
+	}
 </style>

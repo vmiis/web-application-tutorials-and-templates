@@ -12,7 +12,7 @@
 		<script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.min.js"></script>
 		<script>
 			$(document).ready(function(){
-				$.get('version.html?_='+new Date().getTime().toString(),function(v){$.getScript('index.js?_sv='+v.trim(),function(){ vm_init();});},'text')
+				$.get('version.html?_='+new Date().getTime().toString(),function(v){ console.log(v); $vm={}; $vm.ver=v.trim().split(','); $.getScript('index.js?_sv='+$vm.ver[2], function(){ vm_init();});},'text')
 			});
 			var vm_start=function(){
 				var a=window.location.href.split('module=');

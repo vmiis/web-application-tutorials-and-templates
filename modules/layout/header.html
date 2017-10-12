@@ -27,7 +27,7 @@
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('about');"><i class="fa fa-info-circle"></i> About</a></li>
                 <li><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
             </ul>
-			<form class="form-inline my-2 my-lg-0">
+			<form id=form__ID class="form-inline my-2 my-lg-0">
 				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search" />
 			</form>            
         </div>
@@ -88,6 +88,9 @@
         .small_logo__ID{
             color:#fff;
         }
+        #form__ID{
+	        padding-right:80px;
+        }
 		@media screen and (min-width:768px){
 			#nav__ID{
 	        	padding:0;
@@ -101,6 +104,9 @@
 	        #navbars__ID{
 		        padding-top:5px;
 		        padding-left:5px;
+	        }
+	        #form__ID{
+		        padding-right:0px;
 	        }
 		}
     </style>

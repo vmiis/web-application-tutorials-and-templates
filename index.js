@@ -133,7 +133,8 @@ var vm_init=function(){
 			//use local system files
 			text=text.replace(/https:\/\/vmiis.github.io\/api/g,'http://127.0.0.1:8000/vmiis/api');
 			text=text.replace(/https:\/\/vmiis.github.io\/framework/g,'http://127.0.0.1:8000/vmiis/framework');
-			text=text.replace(/https:\/\/vmiis.github.io\/parts/g,'http://127.0.0.1:8000/vmiis/parts');
+			text=text.replace(/https:\/\/vmiis.github.io\/parts/g,'http://127.0.0.1:8000/vmiis/component');
+			text=text.replace(/https:\/\/vmiis.github.io\/component/g,'http://127.0.0.1:8000/vmiis/component');
 			text=text.replace(/https:\/\/vmiis.github.io\/modules/g,'http://127.0.0.1:8000/vmiis/modules');
 		}
 		if(window.location.toString().indexOf('_d=2')!=-1){

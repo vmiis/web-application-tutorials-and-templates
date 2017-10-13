@@ -54,7 +54,7 @@ var vm_init=function(){
 			$vm.library_path =window.location.protocol+'//'+window.location.host;
 		}
 		//--------------------------------------------------------
-		if(config.default_production=='no'){
+		if(config.default_production=='No'){
 			if(window.location.toString().indexOf('database=production')!=-1){
 				$vm.server          ='production';
 				$VmAPI.api_base     =config.api_path_production;

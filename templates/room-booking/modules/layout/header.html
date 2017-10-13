@@ -16,7 +16,7 @@
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars__ID" aria-controls="navbars__ID" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse" id="navbars__ID">
+        <div id="navbars__ID" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('home');"><i class="fa fa-home"></i> Home</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('monthly');">Calendar</a></li>
@@ -30,6 +30,9 @@
                 </li>
                 <li><a class="nav-link" onclick="$vm.nav_click_process('vm_signinout');" name=signinout><i class="fa fa-user"></i> Sign In/Out</a></li>
             </ul>
+			<form id=form__ID class="form-inline my-2 my-lg-0">
+				<input id=vm_system_search class="form-control mr-sm-2" type="text" placeholder="Search modules..." aria-label="Search modules..." />
+			</form>
         </div>
     </nav>
     <script>
@@ -70,10 +73,16 @@
         #navbars__ID{
             padding-left:50px;
         }
+        #form__ID{
+	        padding-right:80px;
+        }
 		@media screen and (max-width:768px){
 			#nav__ID{
 				background-color:#555;
 			}
+	        #form__ID{
+		        padding-right:0px;
+	        }
 		}
     </style>
 </div>

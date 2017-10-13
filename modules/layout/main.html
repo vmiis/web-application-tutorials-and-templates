@@ -28,10 +28,12 @@ VmInclude:/modules/layout/footer.html
 		//-----------------------------------------
 		var modules=$vm.app_config.modules;
 		for (var property in modules) {
-		   if($vm.module_list[property]==undefined){
+		   	if($vm.module_list[property]==undefined){
 			   	$vm.module_list[property]=modules[property];
-				website_item_list_for_search.push({label:property,value:property})
-		   }
+				var nm=$vm.module_list[property]['name_for_search'];
+				if(nm==undefined) nm=property;
+				website_item_list_for_search.push({label:nm,value:property})
+		   	}
 		}
 		//------------------------------------
 		/*
@@ -58,6 +60,7 @@ VmInclude:/modules/layout/footer.html
 					event.preventDefault();
 					$('.navbar-collapse').collapse('hide');
 					$("#vm_system_search").val('');
+					$("#vm_system_search").blur();
 					$('.ui-helper-hidden-accessible').html('');
 					$vm.nav_load_module(ui.item.value);
 				}
@@ -91,10 +94,12 @@ VmInclude:/modules/layout/footer.html
 			else group="";
 			var modules=config.modules;
 			for (var property in modules) {
-			   if($vm.module_list[group+property]==undefined){
-				   $vm.module_list[group+property]=modules[property];
-				   website_item_list_for_search.push({label:property,value:group+property})
-			   }
+			   	if($vm.module_list[group+property]==undefined){
+				   	$vm.module_list[group+property]=modules[property];
+					var nm=$vm.module_list[group+property]['name_for_search'];
+					if(nm==undefined) nm=property;
+				   	website_item_list_for_search.push({label:nm,value:group+property})
+			   	}
 			}
 			N--;
 			if(N==0){
@@ -104,7 +109,7 @@ VmInclude:/modules/layout/footer.html
 		}
 		//------------------------------------
 		var groups=$vm.app_config.additional_groups;
-		if(groups!=undefined){
+		if(groups!=undefined && groups.length>0){
 			N=groups.length;
 			//------------------------------------
 			for(var i=0;i<N;i++){

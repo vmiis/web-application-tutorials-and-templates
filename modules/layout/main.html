@@ -47,6 +47,21 @@ VmInclude:/modules/layout/footer.html
 			$("#vm_alert_information").modal();
 		}
 		//------------------------------------
+		var vm_start=function(){
+			var a=window.location.href.split('module=');
+			if(a.length!=2)	$vm.nav_load_module('home');
+			else{
+				var name=a[1].split('&')[0];
+				if(name.length>0){
+					if($vm.module_list[name]!=undefined){
+						$vm.nav_load_module(name);
+						return;
+					}
+				};
+				alert("The module "+name+" doesn't exist!");
+			}
+		}
+		//********************************************************
 		var add_config_modules_to_module_list_and_start=function(text){
 			var config;
 			try{ config=JSON.parse(text);}
@@ -74,11 +89,7 @@ VmInclude:/modules/layout/footer.html
 						$('.navbar-collapse').collapse('hide');
 						$("#vm_system_search").val('');
 			      		$vm.nav_load_module(ui.item.value);
-			      	},
-					focus: function (event, ui) {
-					                $(".ui-helper-hidden-accessible").hide();
-					                event.preventDefault();
-					            }
+			      	}
 		    	});
 		    	$("#vm_system_search").focus(function(){$("#vm_system_search").autocomplete("search","");});
 				if(vm_start!=undefined){vm_start();}

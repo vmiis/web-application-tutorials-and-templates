@@ -14,20 +14,6 @@
 			$(document).ready(function(){
 				$.get('version.html?_='+new Date().getTime().toString(),function(v){ console.log(v); $vm={}; $vm.ver=v.trim().split(','); $.getScript('index.js?_sv='+$vm.ver[2], function(){ vm_init();});},'text')
 			});
-			var vm_start=function(){
-				var a=window.location.href.split('module=');
-				if(a.length!=2)	$vm.nav_load_module('home');
-				else{
-					var name=a[1].split('&')[0];
-					if(name.length>0){
-						if($vm.module_list[name]!=undefined){
-							$vm.nav_load_module(name);
-							return;
-						}
-					};
-					alert("The module "+name+" doesn't exist!");
-				}
-			}
 		</script>
 	</head>
 	<body></body>

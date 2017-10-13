@@ -1,4 +1,4 @@
-<div header id=header__ID> <!-- bg-dark-->
+<div header id=header__ID>
     <nav id=nav__ID class="navbar navbar-expand-md navbar-dark">
         <a class="navbar-brand d-none d-lg-inline-block" onclick="$vm.nav_load_module('home');">
         	<div class=large_logo__ID>
@@ -21,7 +21,7 @@
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbars__ID" aria-controls="navbars__ID" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse" id="navbars__ID">
+        <div id="navbars__ID" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('home');"><i class="fa fa-home"></i> Home</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" onclick="$vm.nav_load_module('about');"><i class="fa fa-info-circle"></i> About</a></li>
@@ -49,17 +49,12 @@
             /*background: rgba(128,128,128,0.8);*/
             background-color: #38384c;
         }
-        #header__ID a{
+		#header__ID a{
             cursor:pointer;
         }
-        #navbars__ID{
-	        padding-top:55px;
-            padding-left:90px;
-        }
-        #nav__ID{
+		#nav__ID{
 	        z-index:99;
         }
-
         .large_logo__ID{
             color:#fff;
             padding-left:30px;
@@ -83,22 +78,22 @@
             font-size:140%;
         }
         .large_logo_small_label__ID{
-            font-size:75%;
+            font-size:74%;
         }
-        .small_logo__ID{
+		.small_logo__ID{
             color:#fff;
+			font-size: 150%;
+        }
+		#navbars__ID{
+	        padding-top:55px;
+            padding-left:90px;
         }
         #form__ID{
 	        padding-right:80px;
         }
-		@media screen and (min-width:768px){
-			#nav__ID{
-	        	padding:0;
-			}
-		}
 		@media screen and (max-width:768px){
 			#nav__ID{
-	        	padding:auto;
+	        	padding:0 10px;
 				background-color:#555;
 			}
 	        #navbars__ID{

@@ -54,15 +54,25 @@ var vm_init=function(){
 			$vm.library_path =window.location.protocol+'//'+window.location.host;
 		}
 		//--------------------------------------------------------
-		if(window.location.toString().indexOf('database=production')!=-1){
-			//connect to private database
-			$vm.server          ='production';
-			$VmAPI.api_base     =config.api_path_production;
+		if(config.default_production=='no'){
+			if(window.location.toString().indexOf('database=production')!=-1){
+				$vm.server          ='production';
+				$VmAPI.api_base     =config.api_path_production;
+			}
+			else{
+				$vm.server          ='development';
+				$VmAPI.api_base     =config.api_path_development;
+			}
 		}
-		else{
-			//connect to a public database
-			$vm.server          ='development';
-			$VmAPI.api_base     =config.api_path_development;
+		else {
+			if(window.location.toString().indexOf('database=development')!=-1){
+				$vm.server          ='development';
+				$VmAPI.api_base     =config.api_path_development;
+			}
+			else{
+				$vm.server          ='production';
+				$VmAPI.api_base     =config.api_path_production;
+			}
 		}
 		$vm.debug_message=true; //show debug message in console
 		//--------------------------------------------------------

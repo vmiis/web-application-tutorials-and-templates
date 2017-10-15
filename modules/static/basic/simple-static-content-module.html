@@ -12,11 +12,12 @@
 	</div>
 	<a id=btn_c__ID style="display:none;position:absolute;left:5px;bottom:5px;cursor:pointer"><i class="fa fa-commenting-o"> Comments</i></a>
 </div>
-<!--<div id=comments__ID style='display:none;background-color:#fff;padding:0 10px 160px 10px;'></div>-->
-<div id=w_comments__ID style='width:100%;display:none;background-color:#fff;'>
-<div id="comments__ID"></div>
+<div id=g_comments__ID style='width:100%;min-height:600px;display:none;background-color:#fff;'>
+	<div id="comments__ID"></div>
 </div>
-<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+
 <script>
 	function F__ID(){
 		//----------------------------------------
@@ -24,69 +25,7 @@
 			$vm.nav_load_module('simple-dynamic-content-module');
 		})
 		//----------------------------------------
-		if($vm.comments==1){
-			$('#btn_c__ID').show();
-			var active=0;
-			//----------------------------------------
-			$('#btn_c__ID').on('click',function(){
-			    if( $('#w_comments__ID').css('display')=='none' ){
-				    $('#w_comments__ID').css('display','block');
-					$('#D__ID').scrollTop($vm.min_height/2);
-					var id=$vm.vm['__ID'].name.replace(/-/g,'_')+"_test";
-					console.log(id)
-					if(active==0){
-						active=1;
-						var w=$(window).width()-20
-						gapi.comments.render('comments__ID', {
-						    href: "https://www.vmiis.com/#"+id,
-						    width: w,
-						    first_party_property: 'BLOGGER',
-						    view_type: 'FILTERED_POSTMOD'
-						});
-						$('#D__ID').scrollTop($vm.min_height/2);
-						
-						
-						/*
-						$('#disqus_thread').appendTo("#comments__ID");
-						var id = $vm.vm['__ID'].name.replace(/-/g,'');
-						console.log(id)
-						console.log($vm.hosting_path+"/#!"+id)	
-				        if (typeof DISQUS != "undefined") {
-				            DISQUS.reset({
-				                reload: true,
-				                config: function() {
-				                    this.page.identifier=id;
-				                    this.page.url = $vm.hosting_path+"/#!"+id;
-									this.page.title=id;
-				                }
-				            });
-				        }
-				        else{
-							disqus_config = function () {
-								this.page.identifier=id;
-								this.page.url=$vm.hosting_path+"/#!"+id;
-								this.page.title=id;
-							};
-							(function() { // DON'T EDIT BELOW THIS LINE
-							var d = document, s = d.createElement('script');
-							s.src = 'https://modular-distributed-web-application.disqus.com/embed.js';
-							s.setAttribute('data-timestamp', +new Date());
-							(d.head || d.body).appendChild(s);
-							})();
-				        };
-				        */
-			    	}
-			    	
-			    }
-			    else $('#w_comments__ID').css('display','none');
-			})
-			//----------------------------------------
-			$('#D__ID').on('hide',function(){
-				$('#comments__ID').css('display','none');
-				active=0;
-			})
-			//----------------------------------------
-		}
+        VmInclude:__COMPONENT__/comments/google.js
 	}
 </script>
 <style>

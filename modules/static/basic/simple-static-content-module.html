@@ -32,12 +32,8 @@
 						active=1;
 						$('#disqus_thread').appendTo("#comments__ID");
 						var id = $vm.vm['__ID'].name.replace(/-/g,'');
-		//alert(id)
-		//alert($vm.hosting_path+"/#!"+id)
-		
-console.log(id)
-console.log($vm.hosting_path+"/#!"+id)	
-
+						console.log(id)
+						console.log($vm.hosting_path+"/#!"+id)	
 				        if (typeof DISQUS != "undefined") {
 				            DISQUS.reset({
 				                reload: true,
@@ -48,7 +44,19 @@ console.log($vm.hosting_path+"/#!"+id)
 				                }
 				            });
 				        }
-				        else alert('DISQUS Error');
+				        else{
+							disqus_config = function () {
+								this.page.identifier=id;
+								this.page.url=$vm.hosting_path+"/#!"+id;
+								this.page.title=id;
+							};
+							(function() { // DON'T EDIT BELOW THIS LINE
+							var d = document, s = d.createElement('script');
+							s.src = 'https://modular-distributed-web-application.disqus.com/embed.js';
+							s.setAttribute('data-timestamp', +new Date());
+							(d.head || d.body).appendChild(s);
+							})();
+				        };
 			    	}
 			    }
 			    else $('#comments__ID').css('display','none');

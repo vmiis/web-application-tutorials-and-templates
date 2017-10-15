@@ -139,12 +139,13 @@ VmInclude:/modules/layout/footer.html
 </script>
 <div style='display:none'><div id="disqus_thread"></div></div>
 <script>
+	$vm.comments=1;
+	/*
 	var disqus_config = function () {
 		this.page.identifier = "index";
 		this.page.url = $vm.hosting_path+'#!index';
 		this.page.title="index";
 	};
-	$vm.comments=1;
 	if($vm.comments==1){
 		(function() { // DON'T EDIT BELOW THIS LINE
 		var d = document, s = d.createElement('script');
@@ -153,6 +154,7 @@ VmInclude:/modules/layout/footer.html
 		(d.head || d.body).appendChild(s);
 		})();
 	}
+	*/
 </script>
 
 <style main-layout-css>

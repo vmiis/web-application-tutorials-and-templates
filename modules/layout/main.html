@@ -140,11 +140,11 @@ VmInclude:/modules/layout/footer.html
 <div style='display:none'><div id="disqus_thread"></div></div>
 <script>
 	var disqus_config = function () {
-		this.page.identifier = "_sys";
-		this.page.url = "https://www.vmiis.com/#i_sys";
-		this.page.title="_sys";
+		this.page.identifier = "index";
+		this.page.url = $vm.hosting_path+'#!index';
+		this.page.title="index";
 	};
-	$vm.comments=0;
+	$vm.comments=1;
 	if($vm.comments==1){
 		(function() { // DON'T EDIT BELOW THIS LINE
 		var d = document, s = d.createElement('script');

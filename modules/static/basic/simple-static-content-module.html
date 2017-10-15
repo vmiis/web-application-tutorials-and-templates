@@ -31,18 +31,24 @@
 					if(active==0){
 						active=1;
 						$('#disqus_thread').appendTo("#comments__ID");
-						var id = $vm.vm['__ID'].name.replace(/-/g,'_');
+						var id = $vm.vm['__ID'].name.replace(/-/g,'');
+		//alert(id)
+		//alert($vm.hosting_path+"/#!"+id)
+		
+console.log(id)
+console.log($vm.hosting_path+"/#!"+id)	
+
 				        if (typeof DISQUS != "undefined") {
 				            DISQUS.reset({
 				                reload: true,
 				                config: function() {
 				                    this.page.identifier=id;
-				                    this.page.url = "https://www.vmiis.com/#i"+id;
+				                    this.page.url = $vm.hosting_path+"/#!"+id;
 									this.page.title=id;
 				                }
 				            });
 				        }
-				        else alert('DISQUS Error');					
+				        else alert('DISQUS Error');
 			    	}
 			    }
 			    else $('#comments__ID').css('display','none');

@@ -12,7 +12,11 @@
 	</div>
 	<a id=btn_c__ID style="display:none;position:absolute;left:5px;bottom:5px;cursor:pointer"><i class="fa fa-commenting-o"> Comments</i></a>
 </div>
-<div id=comments__ID style='display:none;background-color:#fff;padding:0 10px 160px 10px;'></div></div>
+<!--<div id=comments__ID style='display:none;background-color:#fff;padding:0 10px 160px 10px;'></div>-->
+<div id=w_comments__ID style='width:100%;display:none;background-color:#fff;'>
+<div id="comments__ID"></div>
+</div>
+<script src="https://apis.google.com/js/plusone.js"></script>
 <script>
 	function F__ID(){
 		//----------------------------------------
@@ -25,11 +29,24 @@
 			var active=0;
 			//----------------------------------------
 			$('#btn_c__ID').on('click',function(){
-			    if( $('#comments__ID').css('display')=='none' ){
-				    $('#comments__ID').css('display','block');
+			    if( $('#w_comments__ID').css('display')=='none' ){
+				    $('#w_comments__ID').css('display','block');
 					$('#D__ID').scrollTop($vm.min_height/2);
+					var id=$vm.vm['__ID'].name.replace(/-/g,'_')+"_test";
+					console.log(id)
 					if(active==0){
 						active=1;
+						var w=$(window).width()-20
+						gapi.comments.render('comments__ID', {
+						    href: "https://www.vmiis.com/#"+id,
+						    width: w,
+						    first_party_property: 'BLOGGER',
+						    view_type: 'FILTERED_POSTMOD'
+						});
+						$('#D__ID').scrollTop($vm.min_height/2);
+						
+						
+						/*
 						$('#disqus_thread').appendTo("#comments__ID");
 						var id = $vm.vm['__ID'].name.replace(/-/g,'');
 						console.log(id)
@@ -57,9 +74,11 @@
 							(d.head || d.body).appendChild(s);
 							})();
 				        };
+				        */
 			    	}
+			    	
 			    }
-			    else $('#comments__ID').css('display','none');
+			    else $('#w_comments__ID').css('display','none');
 			})
 			//----------------------------------------
 			$('#D__ID').on('hide',function(){

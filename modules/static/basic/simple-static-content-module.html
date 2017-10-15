@@ -1,30 +1,60 @@
-<div id=vm-top-container>
+<div id=vm_top_container__ID>
 	<div class="container-fluid" style='max-width:800px'>
 		<div class="text-center">
 		  <h1>Modular Distributed Web Aplications.</h1>
 	  	  <hr style='border-top:1px solid #f05f40;'></hr>
 	  	  <p>We can build a web application with unlimited number of modules distributed on different static web servers around the world and maintained by different people with different skills!</p>
 		  <br>
-	  	  <button id=a1 class="btn btn-primary">Check a simple dynamic content module</button>
+	  	  <button id=a1__ID class="btn btn-primary">Check a simple dynamic content module</button>
 		  <br><br>
 		  <br><br>
 		</div>
 	</div>
+	<a id=btn_c__ID style="display:none;position:absolute;left:5px;bottom:5px;cursor:pointer"><i class="fa fa-commenting-o"> Comments</i></a>
 </div>
-<div id=comments__ID style='background-color:#fff'>
-	<script src="https://apis.google.com/js/plusone.js">
-	</script>
-	<div class="g-comments"
-	    data-href = window.location
-	    data-width = "650"
-	    data-first_party_property = "BLOGGER"
-	    data-view_type = "FILTERED_POSTMOD">
-	</div>	
-</div>
+<div id=comments__ID style='display:none;background-color:#fff;padding:0 10px 160px 10px;'></div></div>
 <script>
-	$('#a1').on('click',function(){
-		$vm.nav_load_module('simple-dynamic-content-module')
-	})
+	function F__ID(){
+		//----------------------------------------
+		$('#a1__ID').on('click',function(){
+			$vm.nav_load_module('simple-dynamic-content-module');
+		})
+		//----------------------------------------
+		if($vm.comments==1){
+			$('#btn_c__ID').show();
+			var active=0;
+			//----------------------------------------
+			$('#btn_c__ID').on('click',function(){
+			    if( $('#comments__ID').css('display')=='none' ){
+				    $('#comments__ID').css('display','block');
+					$('#D__ID').scrollTop($vm.min_height/2);
+					if(active==0){
+						active=1;
+						$('#disqus_thread').appendTo("#comments__ID");
+						var id = $vm.vm['__ID'].name.replace(/-/g,'_');
+				        if (typeof DISQUS != "undefined") {
+				            DISQUS.reset({
+				                reload: true,
+				                config: function() {
+				                    this.page.identifier=id;
+				                    this.page.url = "https://www.vmiis.com/#i"+id;
+									this.page.title=id;
+				                }
+				            });
+				        }
+				        else alert('DISQUS Error');					
+			    	}
+			    }
+			    else $('#comments__ID').css('display','none');
+			})
+			//----------------------------------------
+			$('#D__ID').on('hide',function(){
+				$('#comments__ID').css('display','none');
+				active=0;
+			})
+			//----------------------------------------
+		}
+	}
 </script>
 <style>
 	#D__ID{
@@ -36,8 +66,8 @@
 		overflow:auto;
 		animation: vm_module_fadein 1.0s;
 	}
-	#vm-top-container{
-		/*position:absolute;*/
+	#vm_top_container__ID{
+		position:relative;
 		height:100%;
 		width:100%;
 		display: flex;

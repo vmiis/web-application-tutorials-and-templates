@@ -58,7 +58,7 @@
 
 		"simple-static-content-module":	{"url":"/modules/static/basic/simple-static-content-module.html"	},
 		"automatic-slide-show-w3":		{"url":"/modules/static/basic/automatic-slide-show-w3.html"},
-		"carousel-slide-b3":			{"url":"/modules/static/basic/carousel-slide-b3.html"},
+		"carousel-slide-b4":			{"url":"/modules/static/basic/carousel-slide-b4.html"},
 		"price":						{"url":"/modules/static/basic/price.html"},
 		"sandbox":						{"url":"/modules/static/basic/sandbox.html"},
 		"sandbox-content":				{"url":"/modules/static/basic/sandbox.content.html"},

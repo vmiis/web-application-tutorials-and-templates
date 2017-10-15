@@ -1,0 +1,109 @@
+<div id=vm_top_container__ID>
+	<div id=slide__ID>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		    <!-- Indicators -->
+		    <ol class="carousel-indicators">
+		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		      <li data-target="#myCarousel" data-slide-to="1"></li>
+		      <li data-target="#myCarousel" data-slide-to="2"></li>
+		    </ol>
+	
+		    <!-- Wrapper for slides -->
+		    <div class="carousel-inner" role="listbox">
+		      <div class="carousel-item active">
+				<div class=slider_item__ID style="background:url('images/bk5.jpg') no-repeat bottom center; background-size: cover;" ></div>
+		        <div class="carousel-caption">
+		          <h3>New York</h3>
+		          <p>The atmosphere in New York is lorem ipsum.</p>
+		        </div>
+		      </div>
+	
+		      <div class="carousel-item">
+			    <div class=slider_item__ID style="background:url('images/bk6.jpg') no-repeat bottom center; background-size: cover;" ></div>
+		        <div class="carousel-caption">
+		          <h3>Chicago</h3>
+		          <p>Thank you, Chicago - A night we won't forget.</p>
+		        </div>
+		      </div>
+	
+		      <div class="carousel-item">
+				<div class=slider_item__ID style="background:url('images/bk7.jpg') no-repeat bottom center; background-size: cover;" ></div>
+		        <div class="carousel-caption">
+		          <h3>LA</h3>
+		          <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
+		        </div>
+		      </div>
+		    </div>
+	
+		    <!-- Left and right controls -->
+		    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    		<span class="sr-only">Previous</span>	    
+		    </a>
+		    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+		      	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    		<span class="sr-only">Next</span>
+		    </a>
+		</div>
+	</div>
+	<a id=btn_c__ID style="display:none;color:#fff;position:absolute;left:5px;bottom:5px;cursor:pointer"><i class="fa fa-commenting-o"> Comments</i></a>
+</div>
+<div id=comments__ID style='display:none;background-color:#fff;padding:0 10px 160px 10px;'></div></div>
+<script>
+	function F__ID(){
+		//-----------------------
+		var h=$('#'+$vm.root_layout_content_slot).css('height');
+		$('#slide__ID').css('height',h);
+		//-----------------------
+		var h=$('#'+$vm.root_layout_content_slot).css('height');
+		$('div.slider_item__ID').css('height',h)
+		$('.carousel').carousel({
+		  	interval: 3000
+		})
+		//-----------------------
+		if($vm.comments==1){
+			$('#btn_c__ID').show();
+			var active=0;
+			//----------------------------------------
+			$('#btn_c__ID').on('click',function(){
+			    if( $('#comments__ID').css('display')=='none' ){
+				    $('#comments__ID').css('display','block');
+					$('#D__ID').scrollTop($vm.min_height/2);
+					if(active==0){
+						active=1;
+						$('#disqus_thread').appendTo("#comments__ID");
+						var id = $vm.vm['__ID'].name.replace(/-/g,'_');
+				        if (typeof DISQUS != "undefined") {
+				            DISQUS.reset({
+				                reload: true,
+				                config: function () {
+				                    this.page.identifier = id;
+				                    this.page.url = "https://www.vmiis.com/#i"+id;
+									this.page.title=id;
+				                }
+				            });
+				        }					
+			    	}
+			    }
+			    else $('#comments__ID').css('display','none');
+			})
+			//----------------------------------------
+			$('#D__ID').on('hide',function(){
+				$('#comments__ID').css('display','none');
+				active=0;
+			})
+			//----------------------------------------
+		}
+	}
+</script>
+<style>
+	#D__ID{
+		height: 100%;
+		width: 100%;
+		overflow:auto;
+		animation: vm_module_fadein 1.0s;
+	}
+	#vm_top_container__ID{
+		position:relative;
+	}
+</style>

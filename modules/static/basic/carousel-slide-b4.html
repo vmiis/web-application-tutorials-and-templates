@@ -52,11 +52,9 @@
 <script>
 	function F__ID(){
 		//-----------------------
-		var h=$('#'+$vm.root_layout_content_slot).css('height');
-		$('#slide__ID').css('height',h);
+		$('#slide__ID').css('height',$vm.min_height);
 		//-----------------------
-		var h=$('#'+$vm.root_layout_content_slot).css('height');
-		$('div.slider_item__ID').css('height',h)
+		$('div.slider_item__ID').css('height',$vm.min_height)
 		$('.carousel').carousel({
 		  	interval: 3000
 		})

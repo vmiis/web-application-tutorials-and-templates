@@ -3,22 +3,50 @@
 		<i>
 			I like open-source software (OSS), single-page application (SPA),
 			software as a service (SaaS), responsive web design (RWD), modular 
-			distributed web applications.
+			distributed web applications.<br><br>
 		</i>
 	</div>
 </div>
 
+<div style='max-width:600px;padding-left:20px'>
+<b>What is a module?</b>
+<ul>
+	A module is a unit with a specific function. It may contain one HTML  file or a group of files (HTML, JavaScript, and CSS) which can be hosted on any static web server under any individual account.
+</ul>
+<b>What is a web application?</b>
+<ul>
+	A web application is a layout module with a group of other modules linked together.
+</ul>
+<b>What is a layout module?</b>
+<ul>
+	A layout module is the first module loaded into a web browser. It contains a header (banner), a contents container and a footer.
+</ul>
+<b>What is a contents container?</b>
+<ul>
+	A contents container is a html div where other modules can be loaded into it.
+</ul>
+<b>What is the advantage of a modular distributed web application?</b>
+<ul>
+Fast and flexible.<br>
+Modules can be hosted anywhere and maintained by different people with different skills.<br>
+Modules can be reused in different applications.<br>
+Building a web application is just creating a layout module and links all other functional modules needed together.<br>
+</ul>
+</div>
+
 
 <div id=panel__ID>
+
+
     <div class='nav__ID'>
-        <span>About business portal</span>
+        <b>About business portal</b>
         <ul>
             <li module=what-is-business-portal>What is business portal</li>
             <li module=solutions>Solutions</li>
             <li module=structure>Structure</li>
         </ul>
         <br>
-        <span>About myself</span>
+        <b>About myself</b>
         <ul>
             <li module=my-goals>My goals</li>
             <li module=my-skills>My skills</li>
@@ -27,29 +55,29 @@
         <br>
     </div>
     <div class='nav__ID'>
-        <span>For clients</span>
+        <b>For clients</b>
         <ul>
             <li module=job-proposal>Job proposal</li>
         </ul>
         <br>
-        <span>For business partners</span>
+        <b>For business partners</b>
         <ul>
             <li module=business-proposal>Business proposal</li>
         </ul>
         <br>
-        <span>For investors</span>
+        <b>For investors</b>
         <ul>
             <li module=protential-success>Potential success</li>
         </ul>
         <br>
-        <span>For developers</span>
+        <b>For developers</b>
         <ul>
             <li module=working-together>Working together</li>
         </ul>
         <br>
     </div>
 	<div class='nav__ID'>
-        <span>Help</span>
+        <b>Help</b>
         <ul>
             <li module=user-help>User's help</li>
 			<li module=dev-help>Developer's help</li>
@@ -75,10 +103,14 @@
 <style>
 	VmInclude:__PARTS__/navigation/navigation.css
 	#D__ID{
+		color:#888;
 		background: url("__PARTS__/image/texture.png");
 		height:100%;
 		overflow: auto;
 		animation: vm_module_fadein 1.0s;
+	}
+	#D__ID b{
+		color:#666;
 	}
 	#info__ID{
 		max-width:500px;
@@ -91,7 +123,7 @@
 		padding-left:10px;
 	}
 	#panel__ID li {
-		color:#666;
+		color:#888;
 	}
 	#panel__ID li:hover {
 		color:#fff;
@@ -100,16 +132,16 @@
 		text-decoration: none;
 	}
 	#panel__ID a:link {
-		color:#666;
+		color:#888;
 	}
 	#panel__ID a:visited {
-		color:#666;
+		color:#888;
 	}
 	#panel__ID a:hover {
 		color:#fff;
 	}
 	#panel__ID a:active {
-		color:#666;
+		color:#888;
 	}
 	@media screen and (max-width:768px){
 		#sys__ID{

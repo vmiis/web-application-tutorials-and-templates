@@ -9,6 +9,11 @@
 </div>
 
 <div style='max-width:600px;padding-left:20px'>
+<b>About</b>
+<ul>
+I build this website for demonstrating the concept of modular distributed web application.
+I use GitHub (https://github.com/vmiis) as backend development platform and web hosting and use Cloudflare as frontend content delivery and caching.
+</ul>
 <b>What is a module?</b>
 <ul>
 	A module is a unit with a specific function. It may contain one HTML  file or a group of files (HTML, JavaScript, and CSS) which can be hosted on any static web server under any individual account.
@@ -25,6 +30,10 @@
 <ul>
 	A contents container is a html div where other modules can be loaded into it.
 </ul>
+<b>What is the structure of modular distributed web application?</b>
+<ul>
+	<a onclick="$vm.nav_load_module('structure');">click here to see big image</a>
+</ul>
 <b>What is the advantage of a modular distributed web application?</b>
 <ul>
 Fast and flexible.<br>
@@ -39,18 +48,17 @@ Building a web application is just creating a layout module and links all other 
 
 
     <div class='nav__ID'>
-        <b>About business portal</b>
-        <ul>
-            <li module=what-is-business-portal>What is business portal</li>
-            <li module=solutions>Solutions</li>
-            <li module=structure>Structure</li>
-        </ul>
-        <br>
         <b>About myself</b>
         <ul>
             <li module=my-goals>My goals</li>
             <li module=my-skills>My skills</li>
 			<li module=my-hobbies>My hobbies</li>
+        </ul>
+        <br>
+        <b>About business portal</b>
+        <ul>
+            <li module=what-is-business-portal>What is business portal</li>
+            <li module=solutions>Solutions</li>
         </ul>
         <br>
     </div>
@@ -109,6 +117,10 @@ Building a web application is just creating a layout module and links all other 
 		overflow: auto;
 		animation: vm_module_fadein 1.0s;
 	}
+	#D__ID a{
+		cursor:pointer;
+	}
+	
 	#D__ID b{
 		color:#666;
 	}

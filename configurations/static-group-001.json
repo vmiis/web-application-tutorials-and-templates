@@ -11,8 +11,14 @@
 
 		"contact-us-sydney":			{"url":"/modules/static/group-001/contact-us-sydney.html"},
         "contact-us-creative":	       	{"url":"/modules/static/group-001/contact-us-creative.html"},
-        
-        
-        "scenery-rspilhaus":			{"url":"/modules/static/group-001/scenery-rspilhaus.html"}
+
+
+        "scenery-rspilhaus":			{"url":"/modules/static/group-001/scenery-rspilhaus.html"},
+
+
+		"home-page-ocean":	   	{"url":"/modules/static/group-001/ocean/home-page.html"},
+		"info-ocean":	       	{"url":"/modules/static/group-001/ocean/info.html"},
+		"about-ocean":	       	{"url":"/modules/static/group-001/ocean/about.html"},
+		"contactus-ocean":     	{"url":"/modules/static/group-001/ocean/contactus.html"}
 	}
 }

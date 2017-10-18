@@ -70,14 +70,6 @@ VmInclude:/modules/layout/footer.html
 		}
 		//------------------------------------
 		var load_home_module=function(){
-			if(_g_redirect){
-				var m=_g_redirect.replace($vm.hosting_path+"/",'').replace(/\//g,'_');	
-				if($vm.module_list[m]!=undefined){
-					$vm.nav_load_module(m);
-				}
-				else alert("The module "+m+" doesn't exist!");
-				return;
-			}		
 			var a=window.location.href.split('module=');
 			if(a.length!=2)	$vm.nav_load_module('home');
 			else{

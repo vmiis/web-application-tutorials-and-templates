@@ -27,9 +27,9 @@
 		"clinic-questionnaire_report":			{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/report.html","prefix":"dynamic-group-001_clinic-questionnaire_"},
 		"clinic-questionnaire_patient_info":	{"url":"https://clinic-questionnaire.rt.org.au/modules/dynamic/patient_info.html","prefix":"dynamic-group-001_clinic-questionnaire_"},
 
-		"room-booking_monthly":			{"url":"/templates/room-booking/modules/dynamic/monthly.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_"},
-		"room-booking_daily":			{"url":"/templates/room-booking/modules/dynamic/daily.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_"},
-		"room-booking_booking_record":	{"url":"/templates/room-booking/modules/dynamic/booking_record.html","table_id":"20003813"},
-		"room-booking_room":			{"url":"/templates/room-booking/modules/dynamic/room.html","table_id":"20003812"}
+		"room-booking_monthly":			{"url":"/templates/room-booking/modules/dynamic/monthly.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_","name_for_search":"Room booking calendar"},
+		"room-booking_daily":			{"url":"/templates/room-booking/modules/dynamic/daily.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_","name_for_search":"Booking a room"},
+		"room-booking_booking_record":	{"url":"/templates/room-booking/modules/dynamic/booking_record.html","table_id":"20003813","name_for_search":"Room booking records (admin)"},
+		"room-booking_room":			{"url":"/templates/room-booking/modules/dynamic/room.html","table_id":"20003812","name_for_search":"Add or remove a room"}
 	}
 }

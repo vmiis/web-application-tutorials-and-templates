@@ -2,6 +2,10 @@ VmInclude:/modules/layout/top-right-corner.html
 VmInclude:/modules/layout/header.html
 VmInclude:/modules/layout/content-container.html
 VmInclude:/modules/layout/footer.html
+<div id="fb-root"></div>
+<div style='display:none'><div id="disqus_thread"></div></div>
+<script>$vm.comments=1;</script>
+
 <script main-layout-js>
 	function F__ID(){
 		//------------------------------------
@@ -32,8 +36,10 @@ VmInclude:/modules/layout/footer.html
 		   	if($vm.module_list[property]==undefined){
 			   	$vm.module_list[property]=modules[property];
 				var nm=$vm.module_list[property]['name_for_search'];
-				if(nm==undefined) nm=property;
-				website_item_list_for_search.push({label:nm,value:property})
+				if(nm!=""){
+					if(nm==undefined) nm=property;
+					website_item_list_for_search.push({label:nm,value:property})
+				}
 		   	}
 		}
 		//------------------------------------
@@ -98,8 +104,10 @@ VmInclude:/modules/layout/footer.html
 			   	if($vm.module_list[group+property]==undefined){
 				   	$vm.module_list[group+property]=modules[property];
 					var nm=$vm.module_list[group+property]['name_for_search'];
-					if(nm==undefined) nm=property;
-				   	website_item_list_for_search.push({label:nm,value:group+property})
+					if(nm!=""){
+						if(nm==undefined) nm=property;
+						website_item_list_for_search.push({label:nm,value:group+property})
+					}
 			   	}
 			}
 			N--;
@@ -138,11 +146,6 @@ VmInclude:/modules/layout/footer.html
 		//------------------------------------
 	}
 </script>
-
-<div id="fb-root"></div>
-<div style='display:none'><div id="disqus_thread"></div></div>
-<script>$vm.comments=1;</script>
-
 <style main-layout-css>
 	html,body{
 		height:100%;

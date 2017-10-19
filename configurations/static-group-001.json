@@ -19,6 +19,11 @@
 		"home-page-ocean":	   	{"url":"/modules/static/group-001/ocean/home-page.html"},
 		"info-ocean":	       	{"url":"/modules/static/group-001/ocean/info.html"},
 		"about-ocean":	       	{"url":"/modules/static/group-001/ocean/about.html"},
-		"contactus-ocean":     	{"url":"/modules/static/group-001/ocean/contactus.html"}
+		"contactus-ocean":     	{"url":"/modules/static/group-001/ocean/contactus.html"},
+
+		"home-snapshot":	   	{"url":"/modules/static/group-001/snapshot/home.html"},
+		"gallery-snapshot":	    {"url":"/modules/static/group-001/snapshot/gallery.html"},
+		"about-snapshot":	    {"url":"/modules/static/group-001/snapshot/about.html"},
+		"contact-snapshot":     {"url":"/modules/static/group-001/snapshot/contact.html"}
 	}
 }

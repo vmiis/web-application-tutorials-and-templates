@@ -2,6 +2,11 @@ var vm_init=function(){
 	//check and clear localstorage
 	var data=''; for(var key in window.localStorage){ if(window.localStorage.hasOwnProperty(key)){ data+=window.localStorage[key]; }}
 	if(data.length>3000000) localStorage.clear();
+	if(window.location.href.indexOf('?clearcache=1')!=-1){
+		localStorage.clear();
+		alert("Cache is cleard!");
+		return;
+	}
 	//set name space
 	$VmAPI={};$vm.module_list={};$vm.config_list={}
 	//--------------------------------------------------------
@@ -164,7 +169,7 @@ var vm_init=function(){
 	        $.ajaxSetup({ cache: true });
 			$('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>");
 			$('head').append("<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>");
-			
+
             $.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
             $.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js');
             $.getScript('https://apis.google.com/js/plusone.js');

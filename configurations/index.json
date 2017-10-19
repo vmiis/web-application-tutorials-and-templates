@@ -47,10 +47,10 @@
 		"postcode":				{"url":"/modules/dynamic/basic/postcode.html","table_id":"20008494"},
 		"calculation":			{"url":"/modules/dynamic/basic/calculation.html","table_id":"20008496"},
 
-		"room-booking_monthly":			{"url":"/templates/room-booking/modules/dynamic/monthly.html","table_id":"20003813","config":{"group":"room-booking"}},
-		"room-booking_daily":			{"url":"/templates/room-booking/modules/dynamic/daily.html","table_id":"20003813","config":{"group":"room-booking"}},
-		"room-booking_booking_record":	{"url":"/templates/room-booking/modules/dynamic/booking_record.html","table_id":"20003813","config":{"group":"room-booking"}},
-		"room-booking_room":			{"url":"/templates/room-booking/modules/dynamic/room.html","table_id":"20003812","config":{"group":"room-booking"}},
+		"room-booking_monthly":			{"url":"/templates/room-booking/modules/dynamic/monthly.html","table_id":"20003813","prefix":"room-booking_"},
+		"room-booking_daily":			{"url":"/templates/room-booking/modules/dynamic/daily.html","table_id":"20003813","prefix":"room-booking_"},
+		"room-booking_booking_record":	{"url":"/templates/room-booking/modules/dynamic/booking_record.html","table_id":"20003813"},
+		"room-booking_room":			{"url":"/templates/room-booking/modules/dynamic/room.html","table_id":"20003812"},
 
 
 		"simple-dynamic-content-module":{"url":"/modules/dynamic/basic/simple-dynamic-content-module.html","table_id":"20008490"},

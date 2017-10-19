@@ -6,9 +6,10 @@ function F__ID(){
 	//--------------------------------------------------------
 	VmInclude:__PARTS__/calendar/day.v3.js
 	//--------------------------------------------------------
-    var booking_record_module=_group+'booking_record';
+	var prefix=_mlist[$vm.vm['__ID'].name].prefix; if(prefix==undefined) prefix="";
+    var booking_record_module=prefix+'booking_record';
 	var booking_record_tid	 =_mlist[booking_record_module].table_id;
-	var room_tid	 		 =_mlist[_group+'room'].table_id;
+	var room_tid	 		 =_mlist[prefix+'room'].table_id;
 	//--------------------------------------------------------
 	_request_and_render=function(){
 	    layout_render();

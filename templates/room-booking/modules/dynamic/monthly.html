@@ -6,8 +6,9 @@ function F__ID(){
 	//--------------------------------------------------------
     VmInclude:__PARTS__/calendar/month.v3.js
 	//--------------------------------------------------------
-	var daily_module=_group+'daily';
-	var booking_record_module=_group+'booking_record';
+	var prefix=_mlist[$vm.vm['__ID'].name].prefix; if(prefix==undefined) prefix="";
+	var daily_module=prefix+'daily';
+	var booking_record_module=prefix+'booking_record';
 	var booking_record_tid	 =_mlist[booking_record_module].table_id;
 	//-------------------------------------
 	_on_day_click_fun=function(date){

@@ -31,5 +31,6 @@
 		"room-booking_daily":			{"url":"/templates/room-booking/modules/dynamic/daily.html","table_id":"20003813","prefix":"dynamic-group-001_room-booking_","name_for_search":"Booking a room"},
 		"room-booking_booking_record":	{"url":"/templates/room-booking/modules/dynamic/booking_record.html","table_id":"20003813","name_for_search":"Room booking records (admin)"},
 		"room-booking_room":			{"url":"/templates/room-booking/modules/dynamic/room.html","table_id":"20003812","name_for_search":"Add or remove a room"}
+
 	}
 }

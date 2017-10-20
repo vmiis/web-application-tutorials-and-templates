@@ -169,9 +169,11 @@ var vm_init=function(){
 	        $.ajaxSetup({ cache: true });
 			$('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>");
 			$('head').append("<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>");
+			$('head').append("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css'>");
 
             $.getScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js');
             $.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js');
+			$.getScript('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js');
             $.getScript('https://apis.google.com/js/plusone.js');
 
 	        $.getScript('https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js');
